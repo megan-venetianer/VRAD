@@ -22,7 +22,17 @@ class Login extends Component {
       this.setState({isButtonDisabled: true})
     }
   }
+  preventReload = (event) => {
+    event.preventDefault();
+    const loginInfo = {
+      username: this.state.username,
+      email: this.state.email,
+      tripType: this.state.tripType
+    }
+    this.props.loginUser(loginInfo);
+  }
   render() {
+    console.log(this.props);
     return (
       <section className="login-area">
         <form className="login-form">
@@ -50,8 +60,8 @@ class Login extends Component {
                    className="user-input"
                    onChange={this.updateState}>
             </input>
-          </label>    
-          <button disabled={this.state.isButtonDisabled}>
+          </label>
+          <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
             Submit
           </button>
         </form>

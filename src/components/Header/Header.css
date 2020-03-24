@@ -1,0 +1,25 @@
+
+
+header {
+  background: #F6F8AB;
+  box-shadow: 0 5px 20px -10px;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 0.1px;
+}
+
+.site-title {
+  font-size: 3em;
+  font-weight: 400;
+  /* margin: 0; */
+}
+
+.site-tagline {
+  font-style: italic;
+  font-weight: 300;
+  margin: 0;
+}
+
+
+
+

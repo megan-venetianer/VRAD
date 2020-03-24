@@ -1,11 +1,15 @@
 import React from 'react';
-import logo from '../../logo.svg';
+// import logo from '../../logo.svg';
 import './App.css';
 import Header from '../Header/Header';
+import Login from '../Login/Login';
 
 function App() {
   return (
-    <Header />
+    <div>
+      <Header />
+      <Login />
+    </div>
   )
 }
 

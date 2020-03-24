@@ -7,7 +7,21 @@ const NeighborhoodContainer = (props) => {
     return (
       <section className='neighborhood-container'>
         <h2>Hello {props.userInfo}</h2>
-        <Neighborhoods />
+        {console.log(props.neighborhoods)}
+        {
+          props.neighborhoods.map(neighborhood => (
+            <Neighborhoods
+              id={neighborhood.areaInfo.id}
+              key={neighborhood.areaInfo.id}
+              name={neighborhood.areaInfo.name}
+              location={neighborhood.areaInfo.location}
+              about={neighborhood.areaInfo.about}
+              region_code={neighborhood.areaInfo.region_code}
+              quick_search={neighborhood.areaInfo.quick_search}
+              listings={neighborhood.areaInfo.listings}
+            />
+          ))
+        }
       </section>
     )
   } else {

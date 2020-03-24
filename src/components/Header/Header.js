@@ -1,10 +1,10 @@
 import React from 'react';
-
+import './Header.css'
 const Header = () => {
   return (
-    <main>
-      <p>whats up</p>
-    </main>
+    <header>
+      <h1 className="site-title">VRAD</h1>
+    </header>
   )
 }
 

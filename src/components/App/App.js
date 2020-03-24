@@ -18,15 +18,13 @@ class App extends Component {
 
   loginUser = (loginInfo) => {
     this.setState({userInfo: loginInfo})
-    console.log(loginInfo)
-    console.log(this.state)
   }
 
   render() {
     return (
     <div>
       <Header />
-      <Login loginUser={this.loginUser}/>
+      <Login loginUser={this.loginUser} isUserLoggedIn={this.state.userInfo.username}/>
     </div>
     )
   }

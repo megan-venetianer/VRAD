@@ -32,7 +32,7 @@ class Login extends Component {
     this.props.loginUser(loginInfo);
   }
   render() {
-    console.log(this.props);
+    if (!this.props.isUserLoggedIn) {
     return (
       <section className="login-area">
         <form className="login-form">
@@ -67,6 +67,9 @@ class Login extends Component {
         </form>
       </section>
     )
+    } else {
+    return '';
+    }
   }
 }
 

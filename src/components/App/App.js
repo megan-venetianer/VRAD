@@ -25,19 +25,18 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         const promises = data.areas.map(neighborhood => {
-          console.log(neighborhood.details)
-
-          return fetch(neighborhood.details)
-          console.log(neighborhood.details)
+          return fetch('http://localhost:3001' + neighborhood.details)
             .then(res => res.json())
-
-            .then(locationInfo =>
-              console.log(locationInfo)
-            )
+            .then(areaInfo => {
+              return {
+                areaInfo
+              }
+            })
         })
-        // console.log(promises)
+        return Promise.all(promises)
       })
-    // this.setState({})
+    .then(neighborhoods => this.setState({neighborhoods: neighborhoods}))
+    .catch(err => console.log(err))
   }
 
   loginUser = (loginInfo) => {

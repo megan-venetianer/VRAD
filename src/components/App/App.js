@@ -48,7 +48,7 @@ class App extends Component {
     <div>
       <Header />
       <Login loginUser={this.loginUser} isUserLoggedIn={this.state.userInfo.username}/>
-      <NeighborhoodContainer userInfo={this.state.userInfo.username}/>
+      <NeighborhoodContainer userInfo={this.state.userInfo.username} neighborhoods={this.state.neighborhoods}/>
     </div>
     )
   }

@@ -1,9 +1,11 @@
 import React from 'react';
 import './Neighborhoods.css';
 
-const Neighborhoods = () => {
+const Neighborhoods = (props) => {
   return (
-    <p>hi</p>
+    <div>
+    <p>{props.name}</p>
+    </div>
   )
 }
 

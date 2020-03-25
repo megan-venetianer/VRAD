@@ -1,10 +1,12 @@
 import React from 'react';
 import './Neighborhoods.css';
 
-const Neighborhoods = (props) => {
+const Neighborhoods = ({ name, about }) => {
   return (
-    <div>
-    <p>{props.name}</p>
+    <div className='neighborhood-card'>
+      <h2>{name}</h2>
+      <p>{about}</p>
+      <button className='listing-btn'>View Listings</button>
     </div>
   )
 }

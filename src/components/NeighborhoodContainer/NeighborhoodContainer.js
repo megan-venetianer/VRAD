@@ -6,8 +6,7 @@ const NeighborhoodContainer = (props) => {
   if (props.userInfo) {
     return (
       <section className='neighborhood-container'>
-        <h2>Hello {props.userInfo}</h2>
-        {console.log(props.neighborhoods)}
+          <h2 className='greeting'>Hello {props.userInfo}</h2>
         {
           props.neighborhoods.map(neighborhood => (
             <Neighborhoods

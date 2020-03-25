@@ -9,14 +9,12 @@ describe('Neighborhoods', () => {
       <Neighborhoods
         name={"Lower Highlands"}
         shorthand={"LoHi"}
-        about={"LoHi is the best neighborhood!"}
+        about={"Best neighborhood!"}
         />);
 
-    const nameEl = getByText("Lower Highlands");
-    const shorthandEl = getByText("LoHi");
-    const aboutEl = getByText("LoHi is the best neighborhood!");
+    const nameEl = getByText("Lower Highlands (LoHi)");
+    const aboutEl = getByText("Best neighborhood!");
     expect(nameEl).toBeInTheDocument();
-    expect(shorthandEl).toBeInTheDocument();
     expect(aboutEl).toBeInTheDocument();
   });
 });

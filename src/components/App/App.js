@@ -28,6 +28,8 @@ class App extends Component {
           return fetch('http://localhost:3001' + neighborhood.details)
             .then(res => res.json())
             .then(areaInfo => {
+              areaInfo.shorthand = neighborhood.area
+              console.log(areaInfo)
               return {
                 areaInfo
               }

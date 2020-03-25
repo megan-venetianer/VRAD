@@ -46,10 +46,10 @@ class App extends Component {
   render() {
     return (
     <div>
-      <Header />
+      <Header isUserLoggedIn={this.state.userInfo.username} clickHandler={this.loginUser}/>
       <Login loginUser={this.loginUser} isUserLoggedIn={this.state.userInfo.username}/>
       <NeighborhoodContainer userInfo={this.state.userInfo.username} neighborhoods={this.state.neighborhoods}/>
-    </div>
+     </div>
     )
   }
 }

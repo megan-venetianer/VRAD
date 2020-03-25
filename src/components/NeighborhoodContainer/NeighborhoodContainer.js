@@ -3,6 +3,7 @@ import Neighborhoods from '../Neighborhoods/Neighborhoods';
 import './NeighborhoodContainer.css';
 
 const NeighborhoodContainer = (props) => {
+  
   if (props.userInfo) {
     return (
       <section className='neighborhood-container'>

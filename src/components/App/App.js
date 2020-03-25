@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
+import Neighborhoods from '../Neighborhoods/Neighborhoods';
 
 class App extends Component {
   constructor() {

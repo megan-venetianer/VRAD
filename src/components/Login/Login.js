@@ -13,13 +13,8 @@ class Login extends Component {
   }
   updateState = (e) => {
       this.setState({[e.target.id]: e.target.value})
-      this.isFormValid()
-  }
-  isFormValid = () => {
-    if (this.state.username && this.state.email && this.state.tripType) {
-      this.setState({isButtonDisabled: false})
-    } else {
-      this.setState({isButtonDisabled: true})
+      if (this.state.username && this.state.email && this.state.tripType) {
+        this.setState({isButtonDisabled: false})
     }
   }
   preventReload = (event) => {

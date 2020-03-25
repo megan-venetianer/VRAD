@@ -4,9 +4,9 @@ import './Neighborhoods.css';
 const Neighborhoods = ({ name, about }) => {
   return (
     <div className='neighborhood-card'>
-      <h3>{name}</h3>
+      <h2>{name}</h2>
       <p>{about}</p>
-      <button>Listings</button>
+      <button className='listing-btn'>View Listings</button>
     </div>
   )
 }

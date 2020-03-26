@@ -57,14 +57,15 @@ class App extends Component {
       isUserLoggedIn={this.state.userInfo.username}/>}
       />
 
-      <Route path="/neighborhoods" render={(props) => 
+      <Route path="/areas" render={(props) => 
       <NeighborhoodContainer {...props} 
       tripType={this.state.userInfo.tripType}
       neighborhoods={this.state.neighborhoods}
       username={this.state.userInfo.username}/>}
       />
 
-
+      
+      
       
      </div>
     )

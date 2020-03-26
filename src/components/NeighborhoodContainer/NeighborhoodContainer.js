@@ -2,11 +2,11 @@ import React from 'react';
 import Neighborhoods from '../Neighborhoods/Neighborhoods';
 import './NeighborhoodContainer.css';
 
-const NeighborhoodContainer = ({ userName, tripType, neighborhoods }) => {
-  if (userName) {
+const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
+  if (username) {
     return (
       <section data-testid="neighborhoodContainer" className='neighborhood-container'>
-          <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {userName}, you are viewing {tripType} rentals</h2>
+          <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {username}, you are viewing {tripType} rentals</h2>
         {
           neighborhoods.map(neighborhood => (
             <Neighborhoods
@@ -25,7 +25,7 @@ const NeighborhoodContainer = ({ userName, tripType, neighborhoods }) => {
       </section>
     )
   } else {
-    return '';
+    return 'Log in ya silly goose';
   }
 };
 

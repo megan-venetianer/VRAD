@@ -7,10 +7,10 @@ import '@testing-library/jest-dom';
 
 describe("Login", () => {
   it('logs a user in after they enter all their info', () => {
-    const logIn = jest.fn()
+    const loginUser = jest.fn()
     const { getByText, getByPlaceholderText } = render(
       <Login 
-        onClick={logIn}
+        loginUser={loginUser}
       />
        
        )
@@ -32,7 +32,7 @@ describe("Login", () => {
     )
     // console.log(getByText('Submit'))
     fireEvent.click(getByText('Submit'))
-      // expect(logIn).toHaveBeenCalledTimes(1)
+      expect(loginUser).toHaveBeenCalledTimes(1)
     
   })
 })

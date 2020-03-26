@@ -14,4 +14,11 @@
 .listing-btn {
   background: #C4C4C4;
   width: 10em;
+  padding: .4em;
+  justify-content: center;
+  border-radius: 1em;
+}
+
+.neighborhood-header {
+  text-align: center;
 }

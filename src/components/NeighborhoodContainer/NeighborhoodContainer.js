@@ -3,11 +3,10 @@ import Neighborhoods from '../Neighborhoods/Neighborhoods';
 import './NeighborhoodContainer.css';
 
 const NeighborhoodContainer = (props) => {
-
   if (props.userInfo) {
     return (
-      <section className='neighborhood-container'>
-          <h2 className='greeting'>Hello {props.userInfo}</h2>
+      <section data-testid="neighborhoodContainer" className='neighborhood-container'>
+          <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {props.userInfo}</h2>
         {
           props.neighborhoods.map(neighborhood => (
             <Neighborhoods

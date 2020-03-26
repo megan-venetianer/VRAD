@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { Link, Redirect } from 'react-router-dom'
 import './Login.css'
 
 class Login extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       username: null,
       email: null,
@@ -57,8 +58,11 @@ class Login extends Component {
                    onChange={this.updateState}>
             </input>
           </label>
+          
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
+          <Link to="/neighborhoods" className="noStyle">
             Submit
+          </Link>
           </button>
         </form>
       </section>

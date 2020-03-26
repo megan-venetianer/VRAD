@@ -13,10 +13,8 @@ class Login extends Component {
     }
   }
   updateState = (e) => {
-      this.setState({[e.target.id]: e.target.value})
-      if (this.state.username && this.state.email && this.state.tripType) {
-        this.setState({isButtonDisabled: false})
-    }
+
+      this.setState({[e.target.id]: e.target.value}, (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false}) )
   }
   preventReload = (event) => {
     event.preventDefault();
@@ -60,7 +58,7 @@ class Login extends Component {
           </label>
           
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
-          <Link to="/neighborhoods" className="noStyle">
+          <Link to="/areas" className="noStyle" disabled={this.state.isButtonDisabled}>
             Submit
           </Link>
           </button>

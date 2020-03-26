@@ -8,10 +8,7 @@ describe('NeighborhoodContainer', () => {
     const { getByText, getByTestId } = render(
       <NeighborhoodContainer
         neighborhoods={[]}
-        userInfo='meg'
-
-
-
+        userName='meg'
       />)
 
       const containerEl = getByTestId("neighborhoodContainer");

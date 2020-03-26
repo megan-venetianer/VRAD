@@ -51,7 +51,7 @@ class App extends Component {
     <div>
       <Header isUserLoggedIn={this.state.userInfo.username} clickHandler={this.loginUser}/>
       <Login loginUser={this.loginUser} isUserLoggedIn={this.state.userInfo.username}/>
-      <NeighborhoodContainer userInfo={this.state.userInfo.username} neighborhoods={this.state.neighborhoods}/>
+      <NeighborhoodContainer userName={this.state.userInfo.username} tripType={this.state.userInfo.tripType} neighborhoods={this.state.neighborhoods}/>
      </div>
     )
   }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-// import logo from '../../logo.svg';
 import './App.css';
+import { Route, Switch, Link } from 'react-router-dom'
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
-// import Neighborhoods from '../Neighborhoods/Neighborhoods';
+
 
 class App extends Component {
   constructor() {
@@ -50,8 +50,22 @@ class App extends Component {
     return (
     <div>
       <Header isUserLoggedIn={this.state.userInfo.username} clickHandler={this.loginUser}/>
-      <Login loginUser={this.loginUser} isUserLoggedIn={this.state.userInfo.username}/>
-      <NeighborhoodContainer userName={this.state.userInfo.username} tripType={this.state.userInfo.tripType} neighborhoods={this.state.neighborhoods}/>
+
+      <Route path="/login" exact render={(props) => 
+      <Login {...props} 
+      loginUser={this.loginUser}
+      isUserLoggedIn={this.state.userInfo.username}/>}
+      />
+
+      <Route path="/neighborhoods" render={(props) => 
+      <NeighborhoodContainer {...props} 
+      tripType={this.state.userInfo.tripType}
+      neighborhoods={this.state.neighborhoods}
+      username={this.state.userInfo.username}/>}
+      />
+
+
+      
      </div>
     )
   }

@@ -1,9 +1,46 @@
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import App from './App';
-//
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
+import App from './App';
+import Header from '../Header/Header'
+import Login from '../Login/Login'
+import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer'
+
+
+import '@testing-library/jest-dom'
+
+
+describe('App', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<App />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
+  it('fetches user data', () => {
+
+    const fetch = jest.fn()
+    fetch('http://localhost:3001')
+    expect(fetch).toHaveBeenCalledTimes(1)
+    expect(fetch).toHaveBeenCalledWith('http://localhost:3001')
+
+
+  })
+  it('should render a header', () => {
+    render(<Header isUserLoggedIn={null}
+                   clickHandler={null}
+    />)
+  })
+  it('should render a login compoment', () => {
+    render(<Login loginUser={null}
+                  isUserLoggedIn={null}
+    />)
+  })
+  it('should render a neighborhood container', () => {
+    render(
+      <NeighborhoodContainer 
+        userInfo={null}
+        neighborhoods={null}
+      />
+    )
+  })
+})

@@ -24,7 +24,8 @@ class Login extends Component {
       email: this.state.email,
       tripType: this.state.tripType
     }
-    this.props.loginUser(loginInfo);
+    const { loginUser } = this.props;
+    loginUser(loginInfo);
   }
   render() {
     if (!this.props.isUserLoggedIn) {

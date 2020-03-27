@@ -1,14 +1,13 @@
 import './Listings.css'
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 
 
 const Listings = ({listings}) => {
 console.log(listings)
   return (
     <section className="listing">
-      <h1>{listings.name}</h1>
-      <h2>{listings.address.street}</h2>
+      <h2>{listings.name}</h2>
+      <p>{listings.address.street}</p>
     </section>
   )
 }

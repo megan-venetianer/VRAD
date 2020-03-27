@@ -4,6 +4,7 @@ import { Route, Switch, Link } from 'react-router-dom'
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
+import Listings from '../Listings/Listings'
 
 
 class App extends Component {
@@ -30,7 +31,6 @@ class App extends Component {
             .then(res => res.json())
             .then(areaInfo => {
               areaInfo.shorthand = neighborhood.area
-              console.log(areaInfo)
               return {
                 areaInfo
               }
@@ -50,23 +50,27 @@ class App extends Component {
     return (
     <div>
       <Header isUserLoggedIn={this.state.userInfo.username} clickHandler={this.loginUser}/>
-
       <Route path="/login" exact render={(props) => 
       <Login {...props} 
       loginUser={this.loginUser}
       isUserLoggedIn={this.state.userInfo.username}/>}
       />
-
-      <Route path="/areas" render={(props) => 
+      <Route path="/areas" exact render={(props) => 
       <NeighborhoodContainer {...props} 
       tripType={this.state.userInfo.tripType}
       neighborhoods={this.state.neighborhoods}
       username={this.state.userInfo.username}/>}
       />
-
-      
-      
-      
+      <Route path="/areas/:id" render={(props) => {
+        const { match } = props;
+        const { params } = match;
+        return <Listings {...props} 
+        listId = {parseInt(params.id)}
+        tripType={this.state.userInfo.tripType}
+        neighborhoods={this.state.neighborhoods}
+        username={this.state.userInfo.username}/>}
+      }
+      />
      </div>
     )
   }

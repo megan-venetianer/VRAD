@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Listings from '../Listings/Listings'
+import './ListingContainer.css'
 
 
 class ListingContainer extends Component {
@@ -26,8 +27,13 @@ class ListingContainer extends Component {
       .catch(err => console.log(err.msg))
   }
   render() {
+    console.log(this.props)
     if (this.state.listings) {
       return(
+        <div>
+<section className='neighborhood-header'>
+      <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
+</section>
         <section className="listing-container">
          {
            this.state.listings.map(listing => {
@@ -37,6 +43,7 @@ class ListingContainer extends Component {
            })
          }
         </section>
+        </div>
       )
     } else {
       return ('Loading...')
@@ -45,3 +52,4 @@ class ListingContainer extends Component {
 }
 
 export default ListingContainer
+

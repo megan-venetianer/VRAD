@@ -50,21 +50,24 @@ class App extends Component {
     return (
     <div>
       <Header isUserLoggedIn={this.state.userInfo.username} clickHandler={this.loginUser}/>
-      <Route path="/login" exact render={(props) => 
-      <Login {...props} 
+      <Route path="/" exact render={(props) =>
+      <Login {...props}
       loginUser={this.loginUser}
       isUserLoggedIn={this.state.userInfo.username}/>}
       />
-      <Route path="/areas" exact render={(props) => 
-      <NeighborhoodContainer {...props} 
+      <Route path="/areas" exact render={(props) =>
+      <NeighborhoodContainer {...props}
       tripType={this.state.userInfo.tripType}
       neighborhoods={this.state.neighborhoods}
       username={this.state.userInfo.username}/>}
       />
       <Route path="/areas/:id" render={(props) => {
         const { match } = props;
+        console.log(props)
         const { params } = match;
-        return <Listings {...props} 
+        console.log(params)
+        console.log(match)
+        return <Listings {...props}
         listId = {parseInt(params.id)}
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}

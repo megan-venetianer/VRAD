@@ -37,7 +37,7 @@ describe('App', () => {
   })
   it('should render a neighborhood container', () => {
     render(
-      <NeighborhoodContainer 
+      <NeighborhoodContainer
         userInfo={null}
         neighborhoods={null}
       />

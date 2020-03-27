@@ -30,14 +30,12 @@ class Listings extends Component {
   render() {
     if (this.state.listings) {
       return (
-        <div className="listings-container">
-          {this.state.listings.map(listing => (
-            <div className="listings">
-              <h2>{listing.name}</h2>
-              <button className='listing-btn'>View Details</button>
-            </div>
-          ))}
-        </div>
+        <div>
+         <h2>
+           {/* {console.log(this.state.listings)} */}
+           {this.state.listings.map(listing => listing.name)}
+         </h2>
+       </div>
         )
     } else {
       return (

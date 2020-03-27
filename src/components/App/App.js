@@ -63,10 +63,7 @@ class App extends Component {
       />
       <Route path="/areas/:id" render={(props) => {
         const { match } = props;
-        console.log(props)
         const { params } = match;
-        console.log(params)
-        console.log(match)
         return <Listings {...props}
         listId = {parseInt(params.id)}
         tripType={this.state.userInfo.tripType}

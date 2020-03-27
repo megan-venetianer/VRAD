@@ -48,15 +48,26 @@ class Login extends Component {
                    onChange={this.updateState}>
             </input>
           </label>
-          <label for="listing type">
-            <input type="text"
+          <label for="listing type">Listing Type</label>
+            <select
+              id="tripType"
+              name="tripType"
+              className="user-input"
+              placeholder="select one"
+              onChange={this.updateState}>
+              <option value="select">Select Type</option>
+              <option value="vacation">Vacation</option>
+              <option value="business">Business</option>
+              <option value="other">Other</option>
+            </select>
+              {/*<input type="text"
                    id="tripType"
                    placeholder="listing type"
                    className="user-input"
                    onChange={this.updateState}>
-            </input>
-          </label>
-          
+            </input>*/}
+          {/*</label>*/}
+
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
           <Link to="/areas" className="noStyle" disabled={this.state.isButtonDisabled}>
             Submit

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { Link, Redirect } from 'react-router-dom'
 import './Login.css'
 
 class Login extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       username: null,
       email: null,
@@ -12,10 +13,8 @@ class Login extends Component {
     }
   }
   updateState = (e) => {
-      this.setState({[e.target.id]: e.target.value})
-      if (this.state.username && this.state.email && this.state.tripType) {
-        this.setState({isButtonDisabled: false})
-    }
+
+      this.setState({[e.target.id]: e.target.value}, (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false}) )
   }
   preventReload = (event) => {
     event.preventDefault();
@@ -57,8 +56,11 @@ class Login extends Component {
                    onChange={this.updateState}>
             </input>
           </label>
+          
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
+          <Link to="/areas" className="noStyle" disabled={this.state.isButtonDisabled}>
             Submit
+          </Link>
           </button>
         </form>
       </section>

@@ -35,3 +35,14 @@ button {
   text-transform: uppercase;
   width: 40%;
 }
+
+.noStyle {
+  text-decoration: none;
+  color: black;
+}
+
+.noStyle[disabled] {
+  text-decoration: none;
+  pointer-events: none;
+  color: #858585;
+}

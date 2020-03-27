@@ -30,11 +30,17 @@ class Listings extends Component {
   render() {
     if (this.state.listings) {
       return (
-        <div>
-          <h2>
-            {/* {console.log(this.state.listings)} */}
+        <div className="listings-container">
+          {this.state.listings.map(listing => (
+            <div className="listings">
+              <h2>{listing.name}</h2>
+            </div>
+          ))}
+          {/*<h2>
+             {console.log(this.state.listings)}
             {this.state.listings.map(listing => listing.name)}
-          </h2>
+
+          </h2>*/}
         </div>
         )
     } else {
@@ -42,8 +48,8 @@ class Listings extends Component {
         'Loading...'
       )
     }
-    
-  } 
+
+  }
 }
 
 export default Listings

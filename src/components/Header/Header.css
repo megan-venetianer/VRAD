@@ -1,5 +1,3 @@
-
-
 header {
   background: #F6F8AB;
   box-shadow: 0 5px 20px -10px;
@@ -16,7 +14,9 @@ header {
   grid-area: tagline;
   font-style: italic;
   margin: auto 0;
+  font-size: 1.5em;
 }
+
 .site-title {
   grid-area: site-title;
   font-size: 3em;
@@ -30,8 +30,5 @@ header {
   /* font-weight: 300; */
   margin: auto;
   text-align: right;
+  font-size: 1.5em;
 }
-
-
-
-

@@ -34,13 +34,9 @@ class Listings extends Component {
           {this.state.listings.map(listing => (
             <div className="listings">
               <h2>{listing.name}</h2>
+              <button className='listing-btn'>View Details</button>
             </div>
           ))}
-          {/*<h2>
-             {console.log(this.state.listings)}
-            {this.state.listings.map(listing => listing.name)}
-
-          </h2>*/}
         </div>
         )
     } else {

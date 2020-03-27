@@ -9,7 +9,7 @@ const Neighborhoods = ({ name, about, shorthand, id }) => {
       <h2 className='neighborhood-header'>{name} ({shorthand})</h2>
       <p>{about}</p>
       <button className='listing-btn'>
-        <Link to={`areas/${id}`}>
+        <Link to={`neighborhoods/${id}`}>
           View Listings
         </Link>
       </button>

@@ -69,7 +69,7 @@ class Login extends Component {
           {/*</label>*/}
 
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
-          <Link to="/areas" className="noStyle" disabled={this.state.isButtonDisabled}>
+          <Link to="/neighborhoods" className="noStyle" disabled={this.state.isButtonDisabled}>
             Submit
           </Link>
           </button>

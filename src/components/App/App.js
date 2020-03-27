@@ -4,7 +4,7 @@ import { Route, Switch, Link } from 'react-router-dom'
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
-import Listings from '../Listings/Listings'
+import ListingContainer from '../ListingContainer/ListingContainer.js';
 
 
 class App extends Component {
@@ -61,10 +61,10 @@ class App extends Component {
       neighborhoods={this.state.neighborhoods}
       username={this.state.userInfo.username}/>}
       />
-      <Route path="/areas/:id" render={(props) => {
+      <Route path="/areas/:id/" render={(props) => {
         const { match } = props;
         const { params } = match;
-        return <Listings {...props}
+        return <ListingContainer {...props}
         listId = {parseInt(params.id)}
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}

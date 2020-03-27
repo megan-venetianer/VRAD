@@ -26,7 +26,7 @@ describe("Login", () => {
     })
     fireEvent.change(getByPlaceholderText('listing type'), {
       target: {value: 'Business'}
-    },
+    }
       getByText('Submit'), {
         target: {disabled: false}
       }

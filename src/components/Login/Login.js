@@ -53,7 +53,7 @@ class Login extends Component {
               id="tripType"
               name="tripType"
               className="user-input"
-              placeholder="select one"
+              placeholder="listing type"
               onChange={this.updateState}>
               <option value="select">Select Type</option>
               <option value="vacation">Vacation</option>

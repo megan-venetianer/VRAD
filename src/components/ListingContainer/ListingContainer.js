@@ -30,11 +30,12 @@ class ListingContainer extends Component {
   render() {
     if (this.state.listings) {
       return(
-        <div>
-<section className='neighborhood-header'>
-      <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
+        <div  data-testid="listing-container">
+<section className='listing-header' >
+      <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
 </section>
-        <section className="listing-container">
+        <section
+        className="listing-container">
          {
            this.state.listings.map(listing => {
              return (

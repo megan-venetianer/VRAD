@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Listings from '../Listings/Listings'
 import './ListingContainer.css'
+import loading from '../../images/waiting.svg'
 
 
 class ListingContainer extends Component {
@@ -27,7 +28,6 @@ class ListingContainer extends Component {
       .catch(err => console.log(err.msg))
   }
   render() {
-    console.log(this.props)
     if (this.state.listings) {
       return(
         <div>

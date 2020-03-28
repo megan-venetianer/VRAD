@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-import Listings from '../Listings/Listings'
-import './ListingContainer.css'
-// import loading from '../../images/waiting.svg'
+import React, { Component } from 'react';
+import Listings from '../Listings/Listings';
+import './ListingContainer.css';
 import PropTypes from 'prop-types';
-
 
 class ListingContainer extends Component {
   constructor(props) {
@@ -63,7 +61,3 @@ ListingContainer.propTypes = {
   neighborhoods: PropTypes.array,
   username: PropTypes.string
 }
-
-
-
-

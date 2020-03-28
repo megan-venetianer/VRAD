@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom'
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import Login from './Login';
 import '@testing-library/jest-dom';
 
@@ -15,7 +14,7 @@ describe("Login", () => {
           'Submit'
         </button>
       </Login>
-        
+
       </Router>
 
        )

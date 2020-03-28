@@ -1,7 +1,7 @@
 import React from 'react';
 import NeighborhoodContainer from './NeighborhoodContainer.js';
 import { render } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
 describe('NeighborhoodContainer', () => {

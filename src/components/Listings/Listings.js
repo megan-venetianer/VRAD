@@ -1,6 +1,6 @@
-import './Listings.css'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import './Listings.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Listings = ({listings}) => {
@@ -21,4 +21,3 @@ export default Listings
 Listings.propTypes = {
   listings: PropTypes.object
 }
-

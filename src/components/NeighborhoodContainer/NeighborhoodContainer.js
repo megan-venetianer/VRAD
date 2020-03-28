@@ -1,8 +1,10 @@
 import React from 'react';
 import Neighborhoods from '../Neighborhoods/Neighborhoods';
 import './NeighborhoodContainer.css';
+import { Link } from 'react-router-dom'
 
 const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
+  console.log(neighborhoods)
   if (username) {
     return (
       <section data-testid="neighborhoodContainer" className='neighborhood-container'>
@@ -25,7 +27,11 @@ const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
       </section>
     )
   } else {
-    return 'Log in ya silly goose';
+    return <section className='neighborhood-container'>
+      <Link to="/" className="log-in">
+      Please Log In
+      </Link>
+    </section>;
   }
 };
 

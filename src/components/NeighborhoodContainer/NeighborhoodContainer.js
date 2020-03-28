@@ -4,7 +4,6 @@ import './NeighborhoodContainer.css';
 import { Link } from 'react-router-dom'
 
 const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
-  console.log(neighborhoods)
   if (username) {
     return (
       <section data-testid="neighborhoodContainer" className='neighborhood-container'>

@@ -9,7 +9,7 @@ import '@testing-library/jest-dom';
 describe("Login", () => {
   it('logs a user in after they enter all their info', () => {
     const loginUser = jest.fn()
-    const { getByText, getByPlaceholderText } = render(
+    const { getByText, getByPlaceholderText, getByDisplayValue } = render(
       <Router><Login
         loginUser={loginUser}
       /></Router>
@@ -21,19 +21,16 @@ describe("Login", () => {
     fireEvent.change(getByPlaceholderText('email address'), {
       target: {value: 'mocked@email.com'}
     })
-    fireEvent.change(getByPlaceholderText('listing type'), {
+    fireEvent.change(getByDisplayValue('Select Type'), {
       target: {value: 'Vacation'}
     })
-    fireEvent.change(getByPlaceholderText('listing type'), {
+    fireEvent.change(getByDisplayValue('Vacation'), {
       target: {value: 'Business'}
+    })
+    getByText('Submit'), {
+      target: {disabled: false}
     }
-      getByText('Submit'), {
-        target: {disabled: false}
-      }
-    )
-    // console.log(getByText('Submit'))
     fireEvent.click(getByText('Submit'))
       expect(loginUser).toHaveBeenCalledTimes(1)
-
   })
 })

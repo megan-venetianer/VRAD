@@ -12,9 +12,9 @@ header {
 
 .tagline {
   grid-area: tagline;
-  font-style: italic;
   margin: auto 0;
-  font-size: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
 }
 
 .site-title {
@@ -24,11 +24,24 @@ header {
   padding: 20px 0;
 }
 
-.log-out {
-  grid-area: p;
-  font-style: italic;
-  /* font-weight: 300; */
+.no-style {
   margin: auto;
+  text-decoration: none;
+  color: black;
+}
+
+.logout-button {
+  width: 30px;
+  padding-left: 15px;
+}
+
+.log-in-out {
+  display: flex;
+  margin: auto;
+}
+
+.log-out {
+  font-size: 1em;
+  font-weight: 600;
   text-align: right;
-  font-size: 1.5em;
 }

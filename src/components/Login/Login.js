@@ -60,14 +60,6 @@ class Login extends Component {
               <option value="business">Business</option>
               <option value="other">Other</option>
             </select>
-              {/*<input type="text"
-                   id="tripType"
-                   placeholder="listing type"
-                   className="user-input"
-                   onChange={this.updateState}>
-            </input>*/}
-          {/*</label>*/}
-
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
           <Link to="/neighborhoods" className="noStyle" disabled={this.state.isButtonDisabled}>
             Submit

@@ -37,7 +37,7 @@ class App extends Component {
         return Promise.all(promises)
       })
     .then(neighborhoods => this.setState({neighborhoods: neighborhoods}))
-    .catch(err => console.log(err))
+    .catch(err => err.message)
   }
 
   loginUser = (loginInfo) => {

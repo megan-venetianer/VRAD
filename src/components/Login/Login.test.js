@@ -9,10 +9,14 @@ import '@testing-library/jest-dom';
 describe("Login", () => {
   it('logs a user in after they enter all their info', () => {
     const loginUser = jest.fn()
-    const { getByText, getByPlaceholderText, getByDisplayValue } = render(
-      <Router><Login
-        loginUser={loginUser}
-      /></Router>
+    const { getByText, getByPlaceholderText, getByTestId } = render(
+      <Router><Login>
+        <button loginUser={loginUser}>
+          'Submit'
+        </button>
+      </Login>
+        
+      </Router>
 
        )
     fireEvent.change(getByPlaceholderText('username'), {
@@ -21,16 +25,15 @@ describe("Login", () => {
     fireEvent.change(getByPlaceholderText('email address'), {
       target: {value: 'mocked@email.com'}
     })
-    fireEvent.change(getByDisplayValue('Select Type'), {
+    fireEvent.change(getByTestId('Vacation'), {
       target: {value: 'Vacation'}
     })
-    fireEvent.change(getByDisplayValue('Vacation'), {
-      target: {value: 'Business'}
+    fireEvent.change(getByPlaceholderText('email address'), {
+      target: {value: 'mocked2@email.com'}
     })
-    getByText('Submit'), {
-      target: {disabled: false}
-    }
-    fireEvent.click(getByText('Submit'))
-      expect(loginUser).toHaveBeenCalledTimes(1)
+    setTimeout(() => {
+      fireEvent.click(getByText('Submit'))
+      expect(loginUser).toHaveBeenCalled(1)
+    }, 500)
   })
 })

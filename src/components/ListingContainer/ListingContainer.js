@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Listings from '../Listings/Listings'
 import './ListingContainer.css'
-import loading from '../../images/waiting.svg'
+// import loading from '../../images/waiting.svg'
+import PropTypes from 'prop-types';
 
 
 class ListingContainer extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       listings: null
     }
@@ -28,13 +29,15 @@ class ListingContainer extends Component {
       .catch(err => console.log(err.msg))
   }
   render() {
+    console.log(this.props.neighborhoods)
     if (this.state.listings) {
       return(
-        <div>
-<section className='neighborhood-header'>
-      <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
+        <div  data-testid="listing-container">
+<section className='listing-header' >
+      <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
 </section>
-        <section className="listing-container">
+        <section
+        className="listing-container">
          {
            this.state.listings.map(listing => {
              return (
@@ -52,4 +55,15 @@ class ListingContainer extends Component {
 }
 
 export default ListingContainer
+
+
+ListingContainer.propTypes = {
+  listId: PropTypes.number,
+  tripType: PropTypes.string,
+  neighborhoods: PropTypes.array,
+  username: PropTypes.string
+}
+
+
+
 

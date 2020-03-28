@@ -1,9 +1,9 @@
 import './Listings.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 const Listings = ({listings}) => {
-console.log(listings.listing_id)
   return (
     <section className="listing">
       <h2>{listings.name}</h2>
@@ -16,3 +16,9 @@ console.log(listings.listing_id)
 }
 
 export default Listings
+
+
+Listings.propTypes = {
+  listings: PropTypes.object
+}
+

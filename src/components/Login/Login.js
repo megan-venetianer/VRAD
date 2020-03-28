@@ -15,6 +15,12 @@ class Login extends Component {
   updateState = (e) => {
 
       this.setState({[e.target.id]: e.target.value}, (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false}) )
+      this.enableButton()
+  }
+  enableButton = () => {
+    setTimeout(() => {
+      (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false})
+    }, 100)
   }
   preventReload = (event) => {
     event.preventDefault();
@@ -56,7 +62,7 @@ class Login extends Component {
               placeholder="listing type"
               onChange={this.updateState}>
               <option value="select">Select Type</option>
-              <option value="vacation">Vacation</option>
+              <option data-testid="Vacation" value="vacation">Vacation</option>
               <option value="business">Business</option>
               <option value="other">Other</option>
             </select>

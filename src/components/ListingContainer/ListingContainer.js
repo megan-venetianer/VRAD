@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Listings from '../Listings/Listings'
 import './ListingContainer.css'
-import loading from '../../images/waiting.svg'
+// import loading from '../../images/waiting.svg'
+import PropTypes from 'prop-types';
 
 
 class ListingContainer extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       listings: null
     }
@@ -28,6 +29,7 @@ class ListingContainer extends Component {
       .catch(err => console.log(err.msg))
   }
   render() {
+    console.log(this.props.neighborhoods)
     if (this.state.listings) {
       return(
         <div  data-testid="listing-container">
@@ -53,4 +55,15 @@ class ListingContainer extends Component {
 }
 
 export default ListingContainer
+
+
+ListingContainer.propTypes = {
+  listId: PropTypes.number,
+  tripType: PropTypes.string,
+  neighborhoods: PropTypes.array,
+  username: PropTypes.string
+}
+
+
+
 

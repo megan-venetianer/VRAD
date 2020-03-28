@@ -16,10 +16,10 @@ describe('ListingContainer', () => {
         />);
         />
       </Router>);
-     setTimeout(() => {
+      
       const containerEl = getByTestId("listing-container")
       expect(containerEl).toBeInTheDocument();
-     }, 500)
+     
   })
   it('fetches user data', () => {
     const fetch = jest.fn()

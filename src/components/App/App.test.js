@@ -5,6 +5,7 @@ import App from './App';
 import Header from '../Header/Header'
 import Login from '../Login/Login'
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 
 import '@testing-library/jest-dom'
@@ -13,7 +14,7 @@ import '@testing-library/jest-dom'
 describe('App', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
+    ReactDOM.render(<Router><App /></Router>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
   it('fetches user data', () => {
@@ -26,21 +27,21 @@ describe('App', () => {
 
   })
   it('should render a header', () => {
-    render(<Header isUserLoggedIn={null}
+    render(<Router><Header isUserLoggedIn={null}
                    clickHandler={null}
-    />)
+    /></Router>)
   })
   it('should render a login compoment', () => {
-    render(<Login loginUser={null}
+    render(<Router><Login loginUser={null}
                   isUserLoggedIn={null}
-    />)
+    /></Router>)
   })
   it('should render a neighborhood container', () => {
     render(
-      <NeighborhoodContainer
+      <Router><NeighborhoodContainer
         userInfo={null}
         neighborhoods={null}
-      />
+      /></Router>
     )
   })
 })

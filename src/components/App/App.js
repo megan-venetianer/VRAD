@@ -55,13 +55,13 @@ class App extends Component {
       loginUser={this.loginUser}
       isUserLoggedIn={this.state.userInfo.username}/>}
       />
-      <Route path="/areas" exact render={(props) =>
+      <Route path="/neighborhoods" exact render={(props) =>
       <NeighborhoodContainer {...props}
       tripType={this.state.userInfo.tripType}
       neighborhoods={this.state.neighborhoods}
       username={this.state.userInfo.username}/>}
       />
-      <Route path="/areas/:id/" render={(props) => {
+      <Route path="/neighborhoods/:id/" render={(props) => {
         const { match } = props;
         const { params } = match;
         return <ListingContainer {...props}

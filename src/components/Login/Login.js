@@ -53,7 +53,7 @@ class Login extends Component {
               id="tripType"
               name="tripType"
               className="user-input"
-              placeholder="select one"
+              placeholder="listing type"
               onChange={this.updateState}>
               <option value="select">Select Type</option>
               <option value="vacation">Vacation</option>
@@ -69,7 +69,7 @@ class Login extends Component {
           {/*</label>*/}
 
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
-          <Link to="/areas" className="noStyle" disabled={this.state.isButtonDisabled}>
+          <Link to="/neighborhoods" className="noStyle" disabled={this.state.isButtonDisabled}>
             Submit
           </Link>
           </button>

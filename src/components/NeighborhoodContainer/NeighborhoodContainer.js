@@ -1,7 +1,8 @@
 import React from 'react';
 import Neighborhoods from '../Neighborhoods/Neighborhoods';
 import './NeighborhoodContainer.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
   if (username) {
@@ -35,3 +36,9 @@ const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
 };
 
 export default NeighborhoodContainer;
+
+NeighborhoodContainer.propTypes = {
+  username: PropTypes.string,
+  tripType: PropTypes.string,
+  neighborhoods: PropTypes.array
+}

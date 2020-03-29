@@ -82,7 +82,7 @@ class App extends Component {
         neighborhoods={this.state.neighborhoods}
         username={this.state.userInfo.username}/>}
       />
-      <Route path="/neighborhoods/:id/" render={(props) => {
+      <Route path="/neighborhoods/:id/listings/" exact render={(props) => {
         const { match } = props;
         const { params } = match;
         return <ListingContainer {...props}

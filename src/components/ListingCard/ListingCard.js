@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 
 const ListingCard = () => {
   return (
-
+    <div>
+      <p>yo</p>
+    </div>
   )
 }
 

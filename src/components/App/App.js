@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
 import ListingContainer from '../ListingContainer/ListingContainer.js';
+import ListingCardContainer from '../ListingCardContainer/ListingCardContainer.js';
 
 
 class App extends Component {
@@ -62,6 +63,12 @@ class App extends Component {
     return this.state.listings.filter(listing => listing.area_id === id)
   }
 
+  findCurrentListing = (listingId) => {
+    let id = this.state.listings.filter(listing => listing.listing_id === listingId)
+    console.log(id)
+    return id
+  }
+
   render() {
     return (
     <div>
@@ -91,8 +98,12 @@ class App extends Component {
       <Route path="/neighborhoods/:id/listings/:listingId/" render={(props) => {
         const { match } = props;
         const { params } = match;
-        
-      }}
+        return <ListingCardContainer {...props}
+        listingId={parseInt(params.listingId)}
+        currentListing={this.findCurrentListing(parseInt(params.listingId))}
+        tripType={this.state.userInfo.tripType}
+        username={this.state.userInfo.username}/>}
+      }
       />
      </div>
     )

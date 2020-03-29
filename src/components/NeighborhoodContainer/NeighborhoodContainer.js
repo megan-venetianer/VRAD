@@ -5,22 +5,23 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
-  if (username) {
+  console.log(neighborhoods)
+  if (neighborhoods) {
     return (
       <section data-testid="neighborhoodContainer" className='neighborhood-container'>
           <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {username.toUpperCase()}, you are viewing {tripType.toUpperCase()} rentals. Here are some neighborhoods we found for you!</h2>
         {
           neighborhoods.map(neighborhood => (
             <Neighborhoods
-              id={neighborhood.areaInfo.id}
-              key={neighborhood.areaInfo.id}
-              name={neighborhood.areaInfo.name}
-              location={neighborhood.areaInfo.location}
-              about={neighborhood.areaInfo.about}
-              region_code={neighborhood.areaInfo.region_code}
-              quick_search={neighborhood.areaInfo.quick_search}
-              listings={neighborhood.areaInfo.listings}
-              shorthand={neighborhood.areaInfo.shorthand}
+              id={neighborhood.id}
+              key={neighborhood.id}
+              name={neighborhood.name}
+              location={neighborhood.location}
+              about={neighborhood.about}
+              region_code={neighborhood.region_code}
+              quick_search={neighborhood.quick_search}
+              listings={neighborhood.listings}
+              shorthand={neighborhood.shorthand}
             />
           ))
         }

@@ -65,17 +65,17 @@ class App extends Component {
   render() {
     return (
     <div>
-      <Header isUserLoggedIn={this.state.userInfo.username} clickHandler={this.loginUser}/>
+      <Header isUserLoggedIn={this.state.userInfo.username}       clickHandler={this.loginUser}/>
       <Route path="/" exact render={(props) =>
       <Login {...props}
-      loginUser={this.loginUser}
-      isUserLoggedIn={this.state.userInfo.username}/>}
+        loginUser={this.loginUser}
+        isUserLoggedIn={this.state.userInfo.username}/>}
       />
       <Route path="/neighborhoods" exact render={(props) =>
       <NeighborhoodContainer {...props}
-      tripType={this.state.userInfo.tripType}
-      neighborhoods={this.state.neighborhoods}
-      username={this.state.userInfo.username}/>}
+        tripType={this.state.userInfo.tripType}
+        neighborhoods={this.state.neighborhoods}
+        username={this.state.userInfo.username}/>}
       />
       <Route path="/neighborhoods/:id/" render={(props) => {
         const { match } = props;
@@ -87,6 +87,12 @@ class App extends Component {
         username={this.state.userInfo.username}
         listings={this.filterListings(parseInt(params.id))}/>}
       }
+      />
+      <Route path="/neighborhoods/:id/listings/:listingId/" render={(props) => {
+        const { match } = props;
+        const { params } = match;
+        
+      }}
       />
      </div>
     )

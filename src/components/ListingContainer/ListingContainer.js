@@ -13,7 +13,6 @@ class ListingContainer extends Component {
     }
   }
   render() {
-    console.log(this.props)
     if (this.props.listings) {
       return(
 

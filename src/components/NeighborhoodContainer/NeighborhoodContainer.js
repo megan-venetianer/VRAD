@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
-  console.log(neighborhoods)
   if (neighborhoods) {
     return (
       <section data-testid="neighborhoodContainer" className='neighborhood-container'>

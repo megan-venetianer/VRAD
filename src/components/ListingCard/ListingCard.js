@@ -3,10 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ListingCard = () => {
+const ListingCard = ({ name, address, bathrooms, bedrooms, cost, features }) => {
+  console.log(name)
   return (
     <div>
-      <p>yo</p>
+      <p>{name}</p>
+      <p>{address}</p>
     </div>
   )
 }

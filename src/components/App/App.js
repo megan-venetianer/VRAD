@@ -65,7 +65,6 @@ class App extends Component {
 
   findCurrentListing = (listingId) => {
     return this.state.listings.find(listing => listing.listing_id === listingId)
-
   }
 
   render() {

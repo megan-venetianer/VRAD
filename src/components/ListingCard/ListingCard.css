@@ -11,3 +11,13 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.listing-img-container {
+  display: flex;
+}
+
+.listing-details-img {
+  height: 17em;
+  width: 24em;
+  margin: 1em;
+}

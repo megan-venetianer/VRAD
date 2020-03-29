@@ -8,10 +8,19 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features })
   return (
     <div className="listing-details-card">
       <h1 className="listing-details-header">{name}</h1>
+      <div className="listing-img-container">
+        <img className="listing-details-img" src={`../../../images/${id}_a.jpg`} alt={name}/>
+        <img className="listing-details-img" src={`../../../images/${id}_b.jpg`} alt={name}/>
+        <img className="listing-details-img" src={`../../../images/${id}_c.jpg`} alt={name}/>
+      </div>
       <h3>Bedrooms: {bedrooms}</h3>
       <h3>Bathrooms: {bathrooms}</h3>
-      {features.forEach(feature =>
-        <ul>feature</ul>
+      <h3>Features</h3>
+      {features.map(feature => (
+        <ul>
+          <li>{feature}</li>
+        </ul>
+        )
       )}
       <h2>Price per night: ${cost}</h2>
     </div>

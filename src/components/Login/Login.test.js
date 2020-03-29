@@ -1,6 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+<<<<<<< HEAD
 import { BrowserRouter as Router } from 'react-router-dom';
+=======
+import  { BrowserRouter as Router } from 'react-router-dom'
+>>>>>>> master
 import Login from './Login';
 import '@testing-library/jest-dom';
 
@@ -8,6 +12,7 @@ import '@testing-library/jest-dom';
 describe("Login", () => {
   it('logs a user in after they enter all their info', () => {
     const loginUser = jest.fn()
+<<<<<<< HEAD
     const { getByText, getByPlaceholderText, getByTestId } = render(
       <Router><Login>
         <button loginUser={loginUser}>
@@ -15,8 +20,16 @@ describe("Login", () => {
         </button>
       </Login>
 
+=======
+    const { getByText, getByPlaceholderText } = render(
+      <Router>
+      <Login 
+        loginUser={loginUser}
+      />
+>>>>>>> master
       </Router>
 
+       
        )
     fireEvent.change(getByPlaceholderText('username'), {
       target: {value: 'mockedUser'}
@@ -24,15 +37,18 @@ describe("Login", () => {
     fireEvent.change(getByPlaceholderText('email address'), {
       target: {value: 'mocked@email.com'}
     })
-    fireEvent.change(getByTestId('Vacation'), {
+    fireEvent.change(getByPlaceholderText('listing type'), {
       target: {value: 'Vacation'}
     })
-    fireEvent.change(getByPlaceholderText('email address'), {
-      target: {value: 'mocked2@email.com'}
-    })
-    setTimeout(() => {
-      fireEvent.click(getByText('Submit'))
-      expect(loginUser).toHaveBeenCalled(1)
-    }, 500)
+    fireEvent.change(getByPlaceholderText('listing type'), {
+      target: {value: 'Business'}
+    },
+      getByText('Submit'), {
+        target: {disabled: false}
+      }
+    )
+    fireEvent.click(getByText('Submit'))
+      expect(loginUser).toHaveBeenCalledTimes(1)
+    
   })
 })

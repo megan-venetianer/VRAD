@@ -19,6 +19,7 @@ class App extends Component {
       },
       neighborhoods: [],
       listings: [],
+      favorites: [],
       // currentListing: null
     }
   }
@@ -66,6 +67,11 @@ class App extends Component {
   findCurrentListing = (listingId) => {
     return this.state.listings.find(listing => listing.listing_id === listingId)
   }
+  addToFavorites = (id) => {
+    let favorited = this.state.listings.filter(listing => listing.listing_id === id)
+      let newFavorites = [...this.state.favorites, ...favorited]
+      this.setState({favorites: newFavorites})
+  }
 
   render() {
     return (
@@ -100,7 +106,8 @@ class App extends Component {
         listingId={parseInt(params.listingId)}
         currentListing={this.findCurrentListing(parseInt(params.listingId))}
         tripType={this.state.userInfo.tripType}
-        username={this.state.userInfo.username}/>}
+        username={this.state.userInfo.username}
+        addToFavorites={this.addToFavorites}/>}
       }
       />
      </div>

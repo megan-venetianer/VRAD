@@ -6,7 +6,7 @@ import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
 import ListingContainer from '../ListingContainer/ListingContainer.js';
 import ListingCardContainer from '../ListingCardContainer/ListingCardContainer.js';
-
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer.js'
 
 class App extends Component {
   constructor() {
@@ -108,6 +108,11 @@ class App extends Component {
         tripType={this.state.userInfo.tripType}
         username={this.state.userInfo.username}
         addToFavorites={this.addToFavorites}/>}
+      }
+      />
+      <Route path="/favorites/" render={(props) => {
+        return <FavoritesContainer faves={this.state.favorites}/>
+      }
       }
       />
      </div>

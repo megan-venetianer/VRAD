@@ -16,7 +16,8 @@ class App extends Component {
         email: null,
         tripType: null
       },
-      neighborhoods: []
+      neighborhoods: [],
+      listings: []
     }
   }
 
@@ -24,24 +25,40 @@ class App extends Component {
     fetch('http://localhost:3001/api/v1/areas')
       .then(response => response.json())
       .then(data => {
+        let n = []
+        let l = []
         const promises = data.areas.map(neighborhood => {
           return fetch('http://localhost:3001' + neighborhood.details)
             .then(res => res.json())
             .then(areaInfo => {
-              areaInfo.shorthand = neighborhood.area
+              areaInfo.shorthand = neighborhood.area 
+              n.push(areaInfo)
+              this.setState({neighborhoods: n})
               return {
                 areaInfo
               }
             })
+            .then(area => {
+               const listingPromises = area.areaInfo.listings.map(listing => {
+                return fetch('http://localhost:3001' + listing)
+                .then(res => res.json())
+                .then(data => l.push(data))
+              })
+              return Promise.all(listingPromises)
+            })
+            .then(listings => this.setState({listings: l}))
         })
         return Promise.all(promises)
       })
-    .then(neighborhoods => this.setState({neighborhoods: neighborhoods}))
     .catch(err => err.message)
   }
 
   loginUser = (loginInfo) => {
     this.setState({userInfo: loginInfo})
+  }
+
+  filterListings = (id) => {
+    return this.state.listings.filter(listing => listing.area_id === id)
   }
 
   render() {
@@ -66,7 +83,8 @@ class App extends Component {
         listId = {parseInt(params.id)}
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}
-        username={this.state.userInfo.username}/>}
+        username={this.state.userInfo.username}
+        listings={this.filterListings(parseInt(params.id))}/>}
       }
       />
      </div>

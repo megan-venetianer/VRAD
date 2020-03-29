@@ -3,6 +3,7 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import logout from '../../images/logout.svg';
 import login from '../../images/entry.svg';
+import like from '../../images/like.svg'
 
 const Header = (props) => {
   const logInOutButton = () => {
@@ -28,9 +29,18 @@ const Header = (props) => {
     return ( <header>
       <p className="tagline">VACATION RENTALS AROUND DENVER</p>
       <h1 className="site-title">VRAD</h1>
+      <section className="header-right-icons">
       <Link to = "/" className="no-style" >
       <p className="log-out" onClick={() => props.clickHandler(emptyUser)}>{logInOutButton()}</p>
       </Link>
+      <Link to = "/favorites/">
+        <button className="like-btn">
+          View Favorites
+          <img className="like-img" src={like} alt="view favorites" />
+        </button>
+      </Link>
+        </section>
+     
     </header>
     )
 }

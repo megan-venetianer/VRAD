@@ -1,8 +1,8 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
 import { Link } from 'react-router-dom';
-import logout from '../../images/logout.svg'
-import login from '../../images/entry.svg'
+import logout from '../../images/logout.svg';
+import login from '../../images/entry.svg';
 
 const Header = (props) => {
   const logInOutButton = () => {

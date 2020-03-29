@@ -3,15 +3,7 @@ import ReactDOM from 'react-dom';
 import { render, getByText, fireEvent } from '@testing-library/react';
 import Header from './Header';
 import '@testing-library/jest-dom';
-import { BrowserRouter as Router } from 'react-router-dom'
-
-
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
-
+import { BrowserRouter as Router } from 'react-router-dom';
 
 describe("header", () => {
   it('logs out a user when they are logged in', () => {
@@ -21,7 +13,7 @@ describe("header", () => {
       <Header
         clickHandle ={logOut}
        />
-      </Router>  
+      </Router>
        )
     expect(getByText('VRAD')).toBeInTheDocument();
   })

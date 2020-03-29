@@ -1,6 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+<<<<<<< HEAD
+import { BrowserRouter as Router } from 'react-router-dom';
+=======
 import  { BrowserRouter as Router } from 'react-router-dom'
+>>>>>>> master
 import Login from './Login';
 import '@testing-library/jest-dom';
 
@@ -8,11 +12,21 @@ import '@testing-library/jest-dom';
 describe("Login", () => {
   it('logs a user in after they enter all their info', () => {
     const loginUser = jest.fn()
+<<<<<<< HEAD
+    const { getByText, getByPlaceholderText, getByTestId } = render(
+      <Router><Login>
+        <button loginUser={loginUser}>
+          'Submit'
+        </button>
+      </Login>
+
+=======
     const { getByText, getByPlaceholderText } = render(
       <Router>
       <Login 
         loginUser={loginUser}
       />
+>>>>>>> master
       </Router>
 
        

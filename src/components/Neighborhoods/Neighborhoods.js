@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Neighborhoods.css';
+import PropTypes from 'prop-types';
 
 const Neighborhoods = ({ name, about, shorthand, id }) => {
 
@@ -18,3 +19,10 @@ const Neighborhoods = ({ name, about, shorthand, id }) => {
 }
 
 export default Neighborhoods;
+
+Neighborhoods.propTypes = {
+  name: PropTypes.string,
+  about: PropTypes.string,
+  shorthand: PropTypes.string,
+  id: PropTypes.number
+}

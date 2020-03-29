@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './Login.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Login.css';
 import PropTypes from 'prop-types';
 
 

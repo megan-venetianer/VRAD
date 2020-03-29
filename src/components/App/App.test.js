@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from '@testing-library/react';
 import App from './App';
-import Header from '../Header/Header'
-import Login from '../Login/Login'
-import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer'
-import { BrowserRouter as Router } from 'react-router-dom'
+import Header from '../Header/Header';
+import Login from '../Login/Login';
+import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 import '@testing-library/jest-dom'

@@ -1,6 +1,6 @@
-import './Listings.css'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import './Listings.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const Listings = ({name, listing_id, area_id}) => {
@@ -23,4 +23,3 @@ Listings.propTypes = {
   listing_id: PropTypes.number,
   
 }
-

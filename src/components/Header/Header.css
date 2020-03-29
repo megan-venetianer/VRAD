@@ -31,6 +31,7 @@ header {
 }
 
 .logout-button {
+  grid-area: icon;
   width: 30px;
   padding-left: 15px;
 }
@@ -39,9 +40,28 @@ header {
   display: flex;
   margin: auto;
 }
-
+.header-right-icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'link icon';
+  margin: auto;
+}
 .log-out {
+  grid-area: link;
+  margin: auto;
   font-size: 1em;
   font-weight: 600;
   text-align: right;
+}
+.like-img {
+  grid-area: icon;
+  width: 30px;
+  padding-left: 15px;
+}
+
+.like-btn {
+  grid-area: link;
+  text-transform: uppercase;
+  font-size: 1em;
+  width: 200px;
 }

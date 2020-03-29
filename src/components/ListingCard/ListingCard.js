@@ -3,12 +3,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features }) => {
-
+const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, addToFavorites }) => {
   return (
     <div className="listing-details-card">
       <h1 className="listing-details-header">{name}</h1>
-      <button className="favorite-btn">Add to Favorites</button>
+      <button onClick={() => addToFavorites(id)}className="favorite-btn">Add to Favorites</button>
       <div className="listing-img-container">
         <img className="listing-details-img" src={`../../../images/${id}_a.jpg`} alt={name}/>
         <img className="listing-details-img" src={`../../../images/${id}_b.jpg`} alt={name}/>

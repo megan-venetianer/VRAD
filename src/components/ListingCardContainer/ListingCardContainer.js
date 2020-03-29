@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const ListingCardContainer = ({ username, tripType, currentListing }) => {
     return(
       <section data-testId="listingCardContainer" className="listing-card-container">
-        <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {this.props.username.toUpperCase()}, you are viewing {this.props.tripType.toUpperCase()} rentals.
+        <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {username.toUpperCase()}, you are viewing {tripType.toUpperCase()} rentals.
         </h2>
           <ListingCard
             id={currentListing.listing_id}

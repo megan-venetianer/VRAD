@@ -32,7 +32,7 @@ class ListingContainer extends Component {
 
         <div  data-testid="listing-container">
           <section className='listing-header' >
-          <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
+          <h2 className='greeting'>Hello {this.props.username.toUpperCase()}, you are viewing {this.props.tripType.toUpperCase()} rentals.</h2>
           </section>
           <section
           className="listing-container">

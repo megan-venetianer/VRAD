@@ -19,7 +19,7 @@ class App extends Component {
       },
       neighborhoods: [],
       listings: [],
-      currentListing: null
+      // currentListing: null
     }
   }
 
@@ -64,9 +64,8 @@ class App extends Component {
   }
 
   findCurrentListing = (listingId) => {
-    let id = this.state.listings.filter(listing => listing.listing_id === listingId)
-    console.log(id)
-    return id
+    return this.state.listings.find(listing => listing.listing_id === listingId)
+
   }
 
   render() {

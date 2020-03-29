@@ -13,17 +13,18 @@ class ListingContainer extends Component {
     }
   }
   render() {
-    console.log(this.props)
     if (this.props.listings) {
       return(
+
         <div data-testid="listing-container">
-<section className='listing-header' >
-      <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
-</section>
+        <section className='listing-header' >
+        <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
+        </section>
         <section
         className="listing-container">
          {
            this.props.listings.map(listing => {
+
              return (
                <Listings name={listing.name} area_id={listing.area_id} listing_id={listing.listing_id} />
              )
@@ -49,7 +50,3 @@ ListingContainer.propTypes = {
   neighborhoods: PropTypes.array,
   username: PropTypes.string
 }
-
-
-
-

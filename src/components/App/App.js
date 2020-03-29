@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
 import ListingContainer from '../ListingContainer/ListingContainer.js';
+import ListingCardContainer from '../ListingCardContainer/ListingCardContainer.js';
 
 
 class App extends Component {
@@ -17,7 +18,8 @@ class App extends Component {
         tripType: null
       },
       neighborhoods: [],
-      listings: []
+      listings: [],
+      // currentListing: null
     }
   }
 
@@ -31,7 +33,7 @@ class App extends Component {
           return fetch('http://localhost:3001' + neighborhood.details)
             .then(res => res.json())
             .then(areaInfo => {
-              areaInfo.shorthand = neighborhood.area 
+              areaInfo.shorthand = neighborhood.area
               n.push(areaInfo)
               this.setState({neighborhoods: n})
               return {
@@ -61,20 +63,24 @@ class App extends Component {
     return this.state.listings.filter(listing => listing.area_id === id)
   }
 
+  findCurrentListing = (listingId) => {
+    return this.state.listings.find(listing => listing.listing_id === listingId)
+  }
+
   render() {
     return (
     <div>
-      <Header isUserLoggedIn={this.state.userInfo.username} clickHandler={this.loginUser}/>
+      <Header isUserLoggedIn={this.state.userInfo.username}       clickHandler={this.loginUser}/>
       <Route path="/" exact render={(props) =>
       <Login {...props}
-      loginUser={this.loginUser}
-      isUserLoggedIn={this.state.userInfo.username}/>}
+        loginUser={this.loginUser}
+        isUserLoggedIn={this.state.userInfo.username}/>}
       />
       <Route path="/neighborhoods" exact render={(props) =>
       <NeighborhoodContainer {...props}
-      tripType={this.state.userInfo.tripType}
-      neighborhoods={this.state.neighborhoods}
-      username={this.state.userInfo.username}/>}
+        tripType={this.state.userInfo.tripType}
+        neighborhoods={this.state.neighborhoods}
+        username={this.state.userInfo.username}/>}
       />
       <Route path="/neighborhoods/:id/" render={(props) => {
         const { match } = props;
@@ -85,6 +91,16 @@ class App extends Component {
         neighborhoods={this.state.neighborhoods}
         username={this.state.userInfo.username}
         listings={this.filterListings(parseInt(params.id))}/>}
+      }
+      />
+      <Route path="/neighborhoods/:id/listings/:listingId/" render={(props) => {
+        const { match } = props;
+        const { params } = match;
+        return <ListingCardContainer {...props}
+        listingId={parseInt(params.listingId)}
+        currentListing={this.findCurrentListing(parseInt(params.listingId))}
+        tripType={this.state.userInfo.tripType}
+        username={this.state.userInfo.username}/>}
       }
       />
      </div>

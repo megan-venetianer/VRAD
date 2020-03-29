@@ -1,10 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-<<<<<<< HEAD
-import { BrowserRouter as Router } from 'react-router-dom';
-=======
 import  { BrowserRouter as Router } from 'react-router-dom'
->>>>>>> master
 import Login from './Login';
 import '@testing-library/jest-dom';
 
@@ -23,13 +19,13 @@ describe("Login", () => {
 =======
     const { getByText, getByPlaceholderText } = render(
       <Router>
-      <Login 
+      <Login
         loginUser={loginUser}
       />
 >>>>>>> master
       </Router>
 
-       
+
        )
     fireEvent.change(getByPlaceholderText('username'), {
       target: {value: 'mockedUser'}
@@ -49,6 +45,6 @@ describe("Login", () => {
     )
     fireEvent.click(getByText('Submit'))
       expect(loginUser).toHaveBeenCalledTimes(1)
-    
+
   })
 })

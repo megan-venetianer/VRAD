@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const NeighborhoodContainer = ({ username, tripType, neighborhoods }) => {
-  console.log(neighborhoods)
   if (neighborhoods) {
     return (
       <section data-testid="neighborhoodContainer" className='neighborhood-container'>
-          <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {username}, you are viewing {tripType} rentals</h2>
+          <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {username.toUpperCase()}, you are viewing {tripType.toUpperCase()} rentals. Here are some neighborhoods we found for you!</h2>
         {
           neighborhoods.map(neighborhood => (
             <Neighborhoods

@@ -21,3 +21,14 @@
   width: 24em;
   margin: 1em;
 }
+
+.favorite-btn {
+  border: 2px solid black;
+  width: 9em;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.favorite-btn:hover {
+  background: red;
+}

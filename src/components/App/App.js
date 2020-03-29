@@ -17,7 +17,8 @@ class App extends Component {
         tripType: null
       },
       neighborhoods: [],
-      listings: []
+      listings: [],
+      currentListing: null
     }
   }
 
@@ -31,7 +32,7 @@ class App extends Component {
           return fetch('http://localhost:3001' + neighborhood.details)
             .then(res => res.json())
             .then(areaInfo => {
-              areaInfo.shorthand = neighborhood.area 
+              areaInfo.shorthand = neighborhood.area
               n.push(areaInfo)
               this.setState({neighborhoods: n})
               return {

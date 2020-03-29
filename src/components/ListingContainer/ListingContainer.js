@@ -17,9 +17,9 @@ class ListingContainer extends Component {
       return(
 
         <div data-testid="listing-container">
-<section className='listing-header' >
-      <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
-</section>
+        <section className='listing-header' >
+        <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
+        </section>
         <section
         className="listing-container">
          {

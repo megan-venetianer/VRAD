@@ -15,14 +15,7 @@ class Login extends Component {
     }
   }
   updateState = (e) => {
-
-      this.setState({[e.target.id]: e.target.value}, (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false}) )
-      this.enableButton()
-  }
-  enableButton = () => {
-    setTimeout(() => {
-      (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false})
-    }, 100)
+      this.setState({[e.target.id]: e.target.value},() => (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false}) )
   }
   preventReload = (event) => {
     event.preventDefault();

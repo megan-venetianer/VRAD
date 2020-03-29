@@ -9,13 +9,13 @@ const Header = (props) => {
     if (props.isUserLoggedIn) {
       return(
         <div className="log-in-out">
-         LOG OUT <img alt="logout" className="logout-button" src={logout} />
+         <span>LOG OUT</span> <img alt="logout" className="logout-button" src={logout} />
         </div>
       )
      } else {
        return (
         <div className="log-in-out">
-        LOG IN <img alt="login" className="logout-button" src={login} />
+        <span>LOG IN</span> <img alt="login" className="logout-button" src={login} />
         </div>
        )
      }

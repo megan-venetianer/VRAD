@@ -26,13 +26,12 @@ class ListingContainer extends Component {
       .then(listings => {
         this.setState({listings})
       })
-      .catch(err => console.log(err.msg))
+      .catch(err => err.message)
   }
   render() {
-    console.log(this.props.neighborhoods)
     if (this.state.listings) {
       return(
-        <div  data-testid="listing-container">
+        <div data-testid="listing-container">
 <section className='listing-header' >
       <h2 className='greeting'>Hello {this.props.username}, you are viewing {this.props.tripType} rentals</h2>
 </section>
@@ -41,7 +40,7 @@ class ListingContainer extends Component {
          {
            this.state.listings.map(listing => {
              return (
-               <Listings listings={listing} />
+               <Listings name={listing.name} area_id={listing.area_id} listing_id={listing.listing_id} />
              )
            })
          }
@@ -49,7 +48,9 @@ class ListingContainer extends Component {
         </div>
       )
     } else {
-      return ('Loading...')
+      return (<div data-testid="listing-container">
+        Loading...
+        </div>)
     }
   }
 }

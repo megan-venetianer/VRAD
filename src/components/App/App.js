@@ -20,7 +20,6 @@ class App extends Component {
       neighborhoods: [],
       listings: [],
       favorites: [],
-      // currentListing: null
     }
   }
 
@@ -64,8 +63,15 @@ class App extends Component {
     return this.state.listings.filter(listing => listing.area_id === id)
   }
 
+  findNeighborhood = (id) => {
+    let currentNeighborhood = this.state.neighborhoods.find(neighborhood => neighborhood.id === id)
+    // console.log(currentNeighborhood)
+    return currentNeighborhood
+  }
+
   findCurrentListing = (listingId) => {
     return this.state.listings.find(listing => listing.listing_id === listingId)
+
   }
   addToFavorites = (id) => {
       let favorited = this.state.listings.filter(listing => listing.listing_id === id)
@@ -106,6 +112,7 @@ class App extends Component {
         const { match } = props;
         const { params } = match;
         return <ListingContainer {...props}
+        selectedNeighborhood={this.findNeighborhood(parseInt(params.id))}
         listId = {parseInt(params.id)}
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}
@@ -117,9 +124,7 @@ class App extends Component {
       <Route path="/neighborhoods/:id/listings/:listingId/" render={(props) => {
         const { match } = props;
         const { params } = match;
-        
-        return <ListingCardContainer 
-        {...props}
+        return <ListingCardContainer {...props}
         listingId={parseInt(params.listingId)}
         isFavorited={this.state.favorites.find(listing => listing.listing_id === parseInt(params.listingId))}
         currentListing={this.findCurrentListing(parseInt(params.listingId))}

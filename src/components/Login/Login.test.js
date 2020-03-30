@@ -14,8 +14,6 @@ describe("Login", () => {
         loginUser={loginUser}
       />
       </Router>
-
-
        )
     fireEvent.change(getByPlaceholderText('username'), {
       target: {value: 'mockedUser'}
@@ -35,6 +33,5 @@ describe("Login", () => {
     )
     fireEvent.click(getByText('Submit'))
       expect(loginUser).toHaveBeenCalledTimes(1)
-
   })
 })

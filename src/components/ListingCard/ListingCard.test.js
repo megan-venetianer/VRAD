@@ -46,7 +46,7 @@ describe('ListingCard', () => {
   })
 
   it('should be able to add a listing to favorites', () => {
-    const { getByTestId } = mockRender;
+    const { getByTestId, debug } = mockRender;
     const favoriteButton = getByTestId("favorite-button");
 
     fireEvent.click(favoriteButton);

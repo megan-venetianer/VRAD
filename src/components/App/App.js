@@ -131,9 +131,9 @@ class App extends Component {
       }
       />
       <Route path="/favorites/" render={(props) => {
-        const { match } = props;
-        const { params } = match;
-        return <FavoritesContainer faves={this.state.favorites} findCurrentListing={parseInt(params.listingId)}
+        return <FavoritesContainer
+        faves={this.state.favorites} 
+        removeFromFavorites={this.removeFromFavorites}
         />}
       }
       />

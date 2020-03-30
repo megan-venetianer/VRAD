@@ -4,8 +4,8 @@ import './Favorites.css'
 
 
 
-const Favorites = ({name, area_id, listing_id, findCurrentListing}) => {
-  console.log(name)
+const Favorites = ({name, area_id, listing_id, findCurrentListing, remove}) => {
+
   return (
     <section className="favorite">
     <h2>{name}</h2>
@@ -13,6 +13,9 @@ const Favorites = ({name, area_id, listing_id, findCurrentListing}) => {
     <Link to={`/neighborhoods/${area_id}/listings/${listing_id}`}>
       <button onClick={findCurrentListing} className="more-info">View More Info</button>
     </Link>
+      <button className="remove-btn" onClick={() => remove(listing_id)}>
+        Remove From Favorites
+      </button>
   </section>
   )
 }

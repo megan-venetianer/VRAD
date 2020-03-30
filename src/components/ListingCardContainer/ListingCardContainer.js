@@ -4,7 +4,7 @@ import './ListingCardContainer.css';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ListingCardContainer = ({ username, tripType, currentListing, addToFavorites, isFavorited }) => {
+const ListingCardContainer = ({ username, tripType, currentListing, addToFavorites, removeFromFavorites, isFavorited }) => {
   if (username) {
     return(
       <section data-testid="listingCardContainer" className="listing-card-container">
@@ -20,6 +20,7 @@ const ListingCardContainer = ({ username, tripType, currentListing, addToFavorit
           cost={currentListing.details.cost_per_night}
           features={currentListing.details.features}
           addToFavorites={addToFavorites}
+          removeFromFavorites={removeFromFavorites}
           isFavorited = {isFavorited}
         />
       </section>

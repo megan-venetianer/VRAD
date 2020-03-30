@@ -74,29 +74,39 @@ class App extends Component {
 
   }
   addToFavorites = (id) => {
-    let favorited = this.state.listings.filter(listing => listing.listing_id === id)
+      let favorited = this.state.listings.filter(listing => listing.listing_id === id)
       let newFavorites = [...this.state.favorites, ...favorited]
       this.setState({favorites: newFavorites})
-    let filtered = this.state.favorites.filter(favorite => favorite.listing_id !== id)
-    // if (filtered.length !== favorited.length) {
-    //   this.setState({favorites: filtered})
-    // }
+  }
+  removeFromFavorites = (id) => {
+    let filtered = this.state.favorites.filter(fave => fave.listing_id !== id) 
+    if (filtered) {
+      this.setState({favorites: filtered})
+    }
   }
 
   render() {
     return (
     <div>
-      <Header isUserLoggedIn={this.state.userInfo.username}       clickHandler={this.loginUser}/>
+      <Header 
+      isUserLoggedIn={this.state.userInfo.username}
+      clickHandler={this.loginUser}
+      favesCount={this.state.favorites.length}
+      />
       <Route path="/" exact render={(props) =>
-      <Login {...props}
+      <Login 
+        {...props}
         loginUser={this.loginUser}
-        isUserLoggedIn={this.state.userInfo.username}/>}
+        isUserLoggedIn={this.state.userInfo.username}
+        />}
       />
       <Route path="/neighborhoods" exact render={(props) =>
-      <NeighborhoodContainer {...props}
+      <NeighborhoodContainer 
+        {...props}
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}
-        username={this.state.userInfo.username}/>}
+        username={this.state.userInfo.username}
+        />}
       />
       <Route path="/neighborhoods/:id/listings/" exact render={(props) => {
         const { match } = props;
@@ -107,8 +117,9 @@ class App extends Component {
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}
         username={this.state.userInfo.username}
-        listings={this.filterListings(parseInt(params.id))}/>}
-      }
+        listings={this.filterListings(parseInt(params.id))}
+        />}
+        }
       />
       <Route path="/neighborhoods/:id/listings/:listingId/" render={(props) => {
         const { match } = props;
@@ -119,14 +130,16 @@ class App extends Component {
         currentListing={this.findCurrentListing(parseInt(params.listingId))}
         tripType={this.state.userInfo.tripType}
         username={this.state.userInfo.username}
-        addToFavorites={this.addToFavorites}/>}
+        addToFavorites={this.addToFavorites}
+        removeFromFavorites={this.removeFromFavorites}
+        />}
       }
       />
       <Route path="/favorites/" render={(props) => {
-        const { match } = props;
-        const { params } = match;
-        return <FavoritesContainer faves={this.state.favorites} findCurrentListing={parseInt(params.listingId)}/>
-      }
+        return <FavoritesContainer
+        faves={this.state.favorites} 
+        removeFromFavorites={this.removeFromFavorites}
+        />}
       }
       />
      </div>

@@ -80,17 +80,25 @@ class App extends Component {
   render() {
     return (
     <div>
-      <Header isUserLoggedIn={this.state.userInfo.username}       clickHandler={this.loginUser}/>
+      <Header 
+      isUserLoggedIn={this.state.userInfo.username}
+      clickHandler={this.loginUser}
+      favesCount={this.state.favorites.length}
+      />
       <Route path="/" exact render={(props) =>
-      <Login {...props}
+      <Login 
+        {...props}
         loginUser={this.loginUser}
-        isUserLoggedIn={this.state.userInfo.username}/>}
+        isUserLoggedIn={this.state.userInfo.username}
+        />}
       />
       <Route path="/neighborhoods" exact render={(props) =>
-      <NeighborhoodContainer {...props}
+      <NeighborhoodContainer 
+        {...props}
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}
-        username={this.state.userInfo.username}/>}
+        username={this.state.userInfo.username}
+        />}
       />
       <Route path="/neighborhoods/:id/listings/" exact render={(props) => {
         const { match } = props;
@@ -100,27 +108,30 @@ class App extends Component {
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}
         username={this.state.userInfo.username}
-        listings={this.filterListings(parseInt(params.id))}/>}
-      }
+        listings={this.filterListings(parseInt(params.id))}
+        />}
+        }
       />
       <Route path="/neighborhoods/:id/listings/:listingId/" render={(props) => {
         const { match } = props;
         const { params } = match;
         
-        return <ListingCardContainer {...props}
+        return <ListingCardContainer 
+        {...props}
         listingId={parseInt(params.listingId)}
         isFavorited={this.state.favorites.find(listing => listing.listing_id === parseInt(params.listingId))}
         currentListing={this.findCurrentListing(parseInt(params.listingId))}
         tripType={this.state.userInfo.tripType}
         username={this.state.userInfo.username}
-        addToFavorites={this.addToFavorites}/>}
+        addToFavorites={this.addToFavorites}
+        />}
       }
       />
       <Route path="/favorites/" render={(props) => {
         const { match } = props;
         const { params } = match;
-        return <FavoritesContainer faves={this.state.favorites} findCurrentListing={parseInt(params.listingId)}/>
-      }
+        return <FavoritesContainer faves={this.state.favorites} findCurrentListing={parseInt(params.listingId)}
+        />}
       }
       />
      </div>

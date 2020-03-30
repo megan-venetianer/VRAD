@@ -33,6 +33,5 @@ describe("Login", () => {
     )
     fireEvent.click(getByText('Submit'))
       expect(loginUser).toHaveBeenCalledTimes(1)
-
   })
 })

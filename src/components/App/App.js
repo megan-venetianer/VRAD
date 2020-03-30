@@ -68,13 +68,15 @@ class App extends Component {
     return this.state.listings.find(listing => listing.listing_id === listingId)
   }
   addToFavorites = (id) => {
-    let favorited = this.state.listings.filter(listing => listing.listing_id === id)
+      let favorited = this.state.listings.filter(listing => listing.listing_id === id)
       let newFavorites = [...this.state.favorites, ...favorited]
       this.setState({favorites: newFavorites})
-    let filtered = this.state.favorites.filter(favorite => favorite.listing_id !== id)
-    // if (filtered.length !== favorited.length) {
-    //   this.setState({favorites: filtered})
-    // }
+  }
+  removeFromFavorites = (id) => {
+    let filtered = this.state.favorites.filter(fave => fave.listing_id !== id) 
+    if (filtered) {
+      this.setState({favorites: filtered})
+    }
   }
 
   render() {
@@ -124,6 +126,7 @@ class App extends Component {
         tripType={this.state.userInfo.tripType}
         username={this.state.userInfo.username}
         addToFavorites={this.addToFavorites}
+        removeFromFavorites={this.removeFromFavorites}
         />}
       }
       />

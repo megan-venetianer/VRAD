@@ -8,7 +8,7 @@ const ListingCardContainer = ({ username, tripType, currentListing, addToFavorit
   if (username) {
     return(
       <section data-testid="listingCardContainer" className="listing-card-container">
-        <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {username.toUpperCase()}, you are viewing {tripType.toUpperCase()} rentals.
+        <h2 data-testid="neighborhoodHeader" className='greeting'>Hello {username.toUpperCase()}, you are viewing the {currentListing.name} listing!
         </h2>
         <ListingCard
           id={currentListing.listing_id}

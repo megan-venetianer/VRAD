@@ -9,7 +9,7 @@ const ListingContainer = ({ listings, username, tripType, selectedNeighborhood }
     return(
       <div data-testid="listing-container">
       <section className='listing-header' >
-      <h2 className='greeting'>Hello {username}, you are viewing {tripType} rentals in the {selectedNeighborhood.name} neighborhood!</h2>
+      <h2 className='greeting'>Hello {username.toUpperCase()}, you are viewing {tripType.toUpperCase()} rentals in the {selectedNeighborhood.name} neighborhood! Here are some listings we found for you!</h2>
       </section>
       <section
       className="listing-container">

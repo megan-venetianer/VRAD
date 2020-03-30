@@ -35,7 +35,7 @@ const Header = (props) => {
       </Link>
       <Link to = "/favorites/">
         <button className="like-btn">
-          View Favorites
+        View {props.favesCount ? props.favesCount : null} Favorites
           <img className="like-img" src={like} alt="view favorites" />
         </button>
       </Link>

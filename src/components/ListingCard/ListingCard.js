@@ -11,11 +11,12 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, a
     } else {
       return 'Add To Favorites'
     }
-}
+  }
 
   return (
     <div className="listing-details-card">
       <h1 className="listing-details-header">{name}</h1>
+      <h1 className="listing-address">{address}</h1>
       <button onClick={() => addToFavorites(id)}className="favorite-btn">{getFaveButton()}</button>
       <div className="listing-img-container">
         <img className="listing-details-img" src={`../../../images/${id}_a.jpg`} alt={name}/>

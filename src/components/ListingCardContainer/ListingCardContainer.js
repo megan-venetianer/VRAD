@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const ListingCardContainer = ({ username, tripType, currentListing, addToFavorites, removeFromFavorites, isFavorited }) => {
-  console.log(isFavorited)
   if (username) {
     return(
       <section data-testid="listingCardContainer" className="listing-card-container">

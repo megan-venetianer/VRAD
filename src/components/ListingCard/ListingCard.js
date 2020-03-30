@@ -46,3 +46,16 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, a
 }
 
 export default ListingCard
+
+ListingCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  address: PropTypes.string,
+  bathrooms: PropTypes.number,
+  bedrooms: PropTypes.number,
+  cost: PropTypes.number,
+  features: PropTypes.array,
+  addToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func,
+  isFavorited: PropTypes.object
+}

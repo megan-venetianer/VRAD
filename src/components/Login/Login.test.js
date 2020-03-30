@@ -8,21 +8,11 @@ import '@testing-library/jest-dom';
 describe("Login", () => {
   it('logs a user in after they enter all their info', () => {
     const loginUser = jest.fn()
-<<<<<<< HEAD
-    const { getByText, getByPlaceholderText, getByTestId } = render(
-      <Router><Login>
-        <button loginUser={loginUser}>
-          'Submit'
-        </button>
-      </Login>
-
-=======
     const { getByText, getByPlaceholderText } = render(
       <Router>
       <Login
         loginUser={loginUser}
       />
->>>>>>> master
       </Router>
 
 

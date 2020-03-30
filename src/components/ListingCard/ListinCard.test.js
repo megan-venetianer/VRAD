@@ -1,12 +1,14 @@
 import React from 'react';
 import ListingCard from './ListingCard.js';
-import { render } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import '@testing-library/jest-dom';
 
 describe('ListingCard', () => {
-  it('renders current listing details to the page', () => {
-    const { getByText, getAllByTestId } = render(
+  let mockRender;
+
+  beforeEach(() => {
+      mockRender = render(
       <Router><ListingCard
         id={"mockId"}
         name={"mockName"}
@@ -17,7 +19,15 @@ describe('ListingCard', () => {
         features={["mockFeature1", "mockFeature2"]}
       />
       </Router>);
+  })
 
+  afterEach(() => {
+    cleanup()
+  })
+
+  it('renders current listing details to the page', () => {
+
+    const { getByText, getAllByTestId } = mockRender;
     const nameEl = getByText("mockName");
     const addressEl = getByText("mockAddress");
     const bathroomEl = getByText("Bathrooms: 3");

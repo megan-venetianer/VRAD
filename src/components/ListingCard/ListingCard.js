@@ -36,7 +36,7 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, a
       <h3>Features</h3>
       {features.map(feature => (
         <ul>
-          <li>{feature}</li>
+          <li data-testid="listing-feature">{feature}</li>
         </ul>
         )
       )}

@@ -15,14 +15,11 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, a
 }
   const addOrRemoveFromFaves = (id) => {
     if (isFavorited) {
-      console.log('hi')
       return removeFromFavorites(id)
     } else {
-      console.log('ho')
       return addToFavorites(id)
     }
   }
-
   return (
     <div className="listing-details-card">
       <h1 className="listing-details-header">{name}</h1>

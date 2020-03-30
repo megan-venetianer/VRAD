@@ -6,8 +6,10 @@ import '@testing-library/jest-dom';
 
 describe('ListingCard', () => {
   let mockRender;
+  const mockFavoriteFunction = jest.fn();
 
   beforeEach(() => {
+
       mockRender = render(
       <Router><ListingCard
         id={"mockId"}
@@ -17,6 +19,7 @@ describe('ListingCard', () => {
         bedrooms={5}
         cost={465}
         features={["mockFeature1", "mockFeature2"]}
+        addToFavorites={mockFavoriteFunction}
       />
       </Router>);
   })
@@ -25,7 +28,7 @@ describe('ListingCard', () => {
     cleanup()
   })
 
-  it('renders current listing details to the page', () => {
+  it('should render current listing details to the page', () => {
 
     const { getByText, getAllByTestId } = mockRender;
     const nameEl = getByText("mockName");
@@ -40,5 +43,14 @@ describe('ListingCard', () => {
     expect(bedroomEl).toBeInTheDocument();
     expect(costEl).toBeInTheDocument();
     expect(featuresEl).toHaveLength(2);
+  })
+
+  it('should be able to add a listing to favorites', () => {
+    const { getByTestId } = mockRender;
+    const favoriteButton = getByTestId("favorite-button");
+
+    fireEvent.click(favoriteButton);
+
+    expect(mockFavoriteFunction).toHaveBeenCalledTimes(1);
   })
 })

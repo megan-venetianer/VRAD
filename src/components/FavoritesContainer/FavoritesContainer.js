@@ -2,8 +2,7 @@ import React from 'react'
 import Favorites from '../Favorites/Favorites'
 import './FavoritesContainer.css'
 
-const FavoritesContainer = ({faves}) => {
-  console.log(faves)
+const FavoritesContainer = ({faves, removeFromFavorites}) => {
   if (faves.length) {
     return (
       <div data-testid="favorites-container">
@@ -13,15 +12,16 @@ const FavoritesContainer = ({faves}) => {
         <section className="favorites-container">
       {faves.map(fave => {
         return (
-       
-          
-            <Favorites name={fave.name} area_id={fave.area_id} listing_id={fave.listing_id} />
-          
+            <Favorites
+              name={fave.name}
+              area_id={fave.area_id}
+              listing_id={fave.listing_id}
+              remove={removeFromFavorites}
+            />
         )
       })}
       </section>
       </div>
-      
     )
   } else {
     return (

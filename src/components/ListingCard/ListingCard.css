@@ -22,13 +22,19 @@
   margin: 1em;
 }
 
+.favorite-img {
+  grid-area: icon;
+  width: 30px;
+  padding-left: 15px;
+}
+
 .favorite-btn {
-  border: 2px solid black;
-  width: 9em;
+  /* border: 2px solid black; */
+  width: 11em;
   justify-content: center;
   align-self: flex-end;
 }
 
 .favorite-btn:hover {
-  background: red;
+  color: red;
 }

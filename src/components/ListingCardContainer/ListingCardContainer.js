@@ -29,3 +29,13 @@ const ListingCardContainer = ({ username, tripType, currentListing, addToFavorit
     }
   }
 export default ListingCardContainer
+
+
+ListingCardContainer.propTypes = {
+  username: PropTypes.string,
+  tripType: PropTypes.string,
+  currentListing: PropTypes.object,
+  addToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func,
+  isFavorited: PropTypes.object
+}

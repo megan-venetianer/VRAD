@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer.js'
+import ListingCardContainer from '../ListingCardContainer/ListingCardContainer.js';
+import ListingContainer from '../ListingContainer/ListingContainer.js';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
-import ListingContainer from '../ListingContainer/ListingContainer.js';
-import ListingCardContainer from '../ListingCardContainer/ListingCardContainer.js';
-import FavoritesContainer from '../FavoritesContainer/FavoritesContainer.js'
 
 class App extends Component {
   constructor() {
@@ -70,15 +70,16 @@ class App extends Component {
 
   findCurrentListing = (listingId) => {
     return this.state.listings.find(listing => listing.listing_id === listingId)
-
   }
+
   addToFavorites = (id) => {
       let favorited = this.state.listings.filter(listing => listing.listing_id === id)
       let newFavorites = [...this.state.favorites, ...favorited]
       this.setState({favorites: newFavorites})
   }
+
   removeFromFavorites = (id) => {
-    let filtered = this.state.favorites.filter(fave => fave.listing_id !== id) 
+    let filtered = this.state.favorites.filter(fave => fave.listing_id !== id)
     if (filtered) {
       this.setState({favorites: filtered})
     }
@@ -87,20 +88,20 @@ class App extends Component {
   render() {
     return (
     <div>
-      <Header 
+      <Header
       isUserLoggedIn={this.state.userInfo.username}
       clickHandler={this.loginUser}
       favesCount={this.state.favorites.length}
       />
       <Route path="/" exact render={(props) =>
-      <Login 
+      <Login
         {...props}
         loginUser={this.loginUser}
         isUserLoggedIn={this.state.userInfo.username}
         />}
       />
       <Route path="/neighborhoods" exact render={(props) =>
-      <NeighborhoodContainer 
+      <NeighborhoodContainer
         {...props}
         tripType={this.state.userInfo.tripType}
         neighborhoods={this.state.neighborhoods}
@@ -134,7 +135,7 @@ class App extends Component {
       />
       <Route path="/favorites/" render={(props) => {
         return <FavoritesContainer
-        faves={this.state.favorites} 
+        faves={this.state.favorites}
         removeFromFavorites={this.removeFromFavorites}
         />}
       }

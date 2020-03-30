@@ -4,7 +4,6 @@ import './ListingContainer.css';
 import PropTypes from 'prop-types';
 
 const ListingContainer = ({ listings, username, tripType, selectedNeighborhood }) => {
-  console.log(listings)
   if (listings) {
     return(
       <div data-testid="listing-container">
@@ -37,8 +36,8 @@ const ListingContainer = ({ listings, username, tripType, selectedNeighborhood }
 export default ListingContainer
 
 ListingContainer.propTypes = {
-  listId: PropTypes.number,
   tripType: PropTypes.string,
-  neighborhoods: PropTypes.array,
-  username: PropTypes.string
+  listings: PropTypes.array,
+  username: PropTypes.string,
+  selectedNeighborhood: PropTypes.object
 }

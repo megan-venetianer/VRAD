@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import './Favorites.css'
 import PropTypes from 'prop-types';
 
-
-
 const Favorites = ({name, area_id, listing_id, findCurrentListing, remove}) => {
 
   return (

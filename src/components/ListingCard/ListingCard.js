@@ -25,7 +25,7 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, a
     <div className="listing-details-card">
       <h1 className="listing-details-header">{name}</h1>
       <h1 className="listing-address">{address}</h1>
-      <button onClick={() => addOrRemoveFromFaves(id)}className="favorite-btn">{getFaveButton()}</button>
+      <button onClick={() => addOrRemoveFromFaves(id)} data-testid="favorite-button" className="favorite-btn">{getFaveButton()}</button>
       <div className="listing-img-container">
         <img className="listing-details-img" src={`../../../images/${id}_a.jpg`} alt={name}/>
         <img className="listing-details-img" src={`../../../images/${id}_b.jpg`} alt={name}/>
@@ -36,7 +36,7 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, a
       <h3>Features</h3>
       {features.map(feature => (
         <ul>
-          <li>{feature}</li>
+          <li data-testid="listing-feature">{feature}</li>
         </ul>
         )
       )}
@@ -46,3 +46,16 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, a
 }
 
 export default ListingCard
+
+ListingCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  address: PropTypes.string,
+  bathrooms: PropTypes.number,
+  bedrooms: PropTypes.number,
+  cost: PropTypes.number,
+  features: PropTypes.array,
+  addToFavorites: PropTypes.func,
+  removeFromFavorites: PropTypes.func,
+  isFavorited: PropTypes.object
+}

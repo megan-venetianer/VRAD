@@ -14,7 +14,7 @@ const ListingCardContainer = ({ username, tripType, currentListing }) => {
           id={currentListing.listing_id}
           key={currentListing.listing_id}
           name={currentListing.name}
-          address={currentListing.address}
+          address={currentListing.address.street + ' ' + currentListing.address.zip}
           bathrooms={currentListing.details.baths}
           bedrooms={currentListing.details.beds}
           cost={currentListing.details.cost_per_night}

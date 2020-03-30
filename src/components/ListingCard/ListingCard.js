@@ -10,6 +10,7 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features })
     <div className="listing-details-card">
       <div className="listing-header">
         <h1 className="listing-details-header">{name}</h1>
+        <h1 className="listing-address">{address}</h1>
         <button className="favorite-btn">
           Add to Favorites
           <img className="favorite-img" src={like} alt="add to favorites" />
@@ -24,7 +25,7 @@ const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features })
       <h3>Features</h3>
       {features.map(feature => (
         <ul>
-        <li>{feature}</li>
+        <li data-testid="listing-feature">{feature}</li>
         </ul>
       )
     )}

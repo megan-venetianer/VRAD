@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import like from '../../images/like.svg'
 
-const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost,  features, addToFavorites, isFavorited }) => {
+const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, addToFavorites, isFavorited }) => {
   const getFaveButton = () => {
     if (isFavorited) {
       return 'Remove From Favorites'
     } else {
       return 'Add To Favorites'
     }
-  }
+}
 
   return (
     <div className="listing-details-card">

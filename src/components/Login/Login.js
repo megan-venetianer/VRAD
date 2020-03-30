@@ -15,7 +15,11 @@ class Login extends Component {
     }
   }
   updateState = (e) => {
-      this.setState({[e.target.id]: e.target.value},() => (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false}) )
+      this.setState({[e.target.id]: e.target.value}, () => this.errorHandling())
+  }
+  errorHandling = () => {
+    (this.state.username && this.state.email && this.state.tripType) && this.setState({isButtonDisabled: false}) 
+   
   }
   preventReload = (event) => {
     event.preventDefault();
@@ -34,6 +38,7 @@ class Login extends Component {
         <form className="login-form">
           <h2>Log In</h2>
           <label for="username">
+            <p className="required">{this.state.username ? ' . ' : '*Required*'}</p>
             <input type="text"
                    id="username"
                    placeholder="username"
@@ -42,6 +47,7 @@ class Login extends Component {
             </input>
           </label>
           <label for="email address">
+          <p className="required">{this.state.email ? ' . ' : '*Required*'}</p>
             <input type="text"
                    id="email"
                    placeholder="email address"
@@ -50,6 +56,7 @@ class Login extends Component {
             </input>
           </label>
           <label for="listing type">Listing Type</label>
+          <p className="required">{this.state.tripType ? ' . ' : '*Required*'}</p>
             <select
               id="tripType"
               name="tripType"
@@ -63,7 +70,7 @@ class Login extends Component {
             </select>
           <button onClick={this.preventReload} disabled={this.state.isButtonDisabled}>
           <Link to="/neighborhoods" className="noStyle" disabled={this.state.isButtonDisabled}>
-            Submit
+            <span className='submit'>Submit</span>
           </Link>
           </button>
         </form>
@@ -78,5 +85,9 @@ class Login extends Component {
 export default Login
 
 Login.propTypes = {
-  Login: PropTypes.func
+  username: PropTypes.any,
+  tripType: PropTypes.any,
+  email: PropTypes.any,
+  isButtonDisabled: PropTypes.bool
 }
+

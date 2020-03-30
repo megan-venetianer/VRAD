@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Listings = ({name, listing_id, area_id, findCurrentListing}) => {
+const Listings = ({name, listing_id, area_id, findCurrentListing }) => {
   return (
     <section className="listing">
       <h2>{name}</h2>

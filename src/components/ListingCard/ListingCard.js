@@ -3,19 +3,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, addToFavorites, isFavorited }) => {
+const ListingCard = ({ id, name, address, bathrooms, bedrooms, cost, features, addToFavorites, removeFromFavorites, isFavorited }) => {
+
   const getFaveButton = () => {
     if (isFavorited) {
+
       return 'Remove From Favorites'
     } else {
       return 'Add To Favorites'
     }
 }
+  const addOrRemoveFromFaves = (id) => {
+    if (isFavorited) {
+      console.log('hi')
+      return removeFromFavorites(id)
+    } else {
+      console.log('ho')
+      return addToFavorites(id)
+    }
+  }
 
   return (
     <div className="listing-details-card">
       <h1 className="listing-details-header">{name}</h1>
-      <button onClick={() => addToFavorites(id)}className="favorite-btn">{getFaveButton()}</button>
+      <button onClick={() => addOrRemoveFromFaves(id)}className="favorite-btn">{getFaveButton()}</button>
       <div className="listing-img-container">
         <img className="listing-details-img" src={`../../../images/${id}_a.jpg`} alt={name}/>
         <img className="listing-details-img" src={`../../../images/${id}_b.jpg`} alt={name}/>

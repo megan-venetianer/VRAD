@@ -113,9 +113,7 @@ class App extends Component {
         const { params } = match;
         return <ListingContainer {...props}
         selectedNeighborhood={this.findNeighborhood(parseInt(params.id))}
-        listId = {parseInt(params.id)}
         tripType={this.state.userInfo.tripType}
-        neighborhoods={this.state.neighborhoods}
         username={this.state.userInfo.username}
         listings={this.filterListings(parseInt(params.id))}
         />}

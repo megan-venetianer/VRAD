@@ -1,6 +1,8 @@
 import React from 'react'
 import Favorites from '../Favorites/Favorites'
 import './FavoritesContainer.css'
+import PropTypes from 'prop-types';
+
 
 const FavoritesContainer = ({faves, removeFromFavorites}) => {
   if (faves.length) {
@@ -25,9 +27,16 @@ const FavoritesContainer = ({faves, removeFromFavorites}) => {
     )
   } else {
     return (
+      <div data-testid="favorites-container-none">
       <p>You dont have any favorites yet</p>
+      </div>
     )
   }
 }
 
 export default FavoritesContainer
+
+FavoritesContainer.propTypes = {
+  faves: PropTypes.array,
+  removeFromFavorites: PropTypes.func
+}

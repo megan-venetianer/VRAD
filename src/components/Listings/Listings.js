@@ -21,4 +21,6 @@ export default Listings
 Listings.propTypes = {
   name: PropTypes.string,
   listing_id: PropTypes.number,
+  area_id: PropTypes.number,
+  findCurrentListing: PropTypes.func
 }

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Favorites.css'
 
-
-
 const Favorites = ({name, area_id, listing_id, findCurrentListing, remove}) => {
 
   return (

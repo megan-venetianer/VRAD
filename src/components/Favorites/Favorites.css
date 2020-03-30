@@ -16,7 +16,7 @@
   width: 34em;
 }
 
-.more-info {
+.more-info, .remove-btn {
   border: 2px solid black;
   width: 10em;
   padding: .4em;

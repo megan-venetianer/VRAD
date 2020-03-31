@@ -7,6 +7,7 @@ import ListingCardContainer from '../ListingCardContainer/ListingCardContainer.j
 import ListingContainer from '../ListingContainer/ListingContainer.js';
 import Login from '../Login/Login';
 import NeighborhoodContainer from '../NeighborhoodContainer/NeighborhoodContainer';
+import { getNeighborhoods } from '../apiCalls';
 
 class App extends Component {
   constructor() {
@@ -24,8 +25,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:3001/api/v1/areas')
-      .then(response => response.json())
+      getNeighborhoods()
       .then(data => {
         let n = []
         let l = []

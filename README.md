@@ -23,7 +23,7 @@ The purpose of this project was to create an application search for properties t
 - Jest
 - React Testing Library
 
-![App Demo](https://giphy.com/gifs/l4jGrm93597DIb9YDB/html5)
+![App Demo](https://media.giphy.com/media/l4jGrm93597DIb9YDB/giphy.gif)
 
 ### 3. Installation
 

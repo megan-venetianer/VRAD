@@ -23,7 +23,7 @@ The purpose of this project was to create an application search for properties t
 - Jest
 - React Testing Library
 
-![App Demo](https://media.giphy.com/media/l4jGrm93597DIb9YDB/giphy.gif)
+![App Demo](https://giphy.com/gifs/l4jGrm93597DIb9YDB/html5)
 
 ### 3. Installation
 
@@ -35,7 +35,11 @@ The purpose of this project was to create an application search for properties t
 6. Repeat steps 3 and 4 for the repo above
 7. Clone down the image files from [this repo link](https://github.com/turingschool/VRAD-Assets) and extract the image folder and place it into the public folder within the app's directory.
 
+### 4. Future Iterations
+
+We would like to build out our testing suite (add more tests for Sad paths, successfully set up tests to mock the fetch of our API data)
+
   
-  ### 4. Team Members
+### 5. Team Members
 * [Megan Venetianer](https://github.com/megan-venetianer)
 * [Cody Smith](https://github.com/monstaro)

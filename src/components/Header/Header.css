@@ -39,12 +39,14 @@ header {
   display: flex;
   margin: auto;
 }
+
 .header-right-icons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'link icon';
   margin: auto;
 }
+
 .log-out {
   grid-area: link;
   margin: auto;
@@ -52,6 +54,11 @@ header {
   font-weight: 600;
   text-align: right;
 }
+
+.log-out:hover {
+  color: #1CCE89;
+}
+
 .like-img {
   grid-area: icon;
   width: 30px;
@@ -63,4 +70,8 @@ header {
   text-transform: uppercase;
   font-size: 1em;
   width: 200px;
+}
+
+.like-btn:hover {
+  color: #EB826D;
 }

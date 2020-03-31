@@ -2,9 +2,9 @@
 
 body, html {
   background: #C4C4C4;
-  margin: 0;
-  height: 100vh;
   font-family: 'Roboto Condensed', sans-serif;
+  height: 100vh;
+  margin: 0;
 }
 
 button {

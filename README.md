@@ -24,6 +24,7 @@ The purpose of this project was to create an application search for properties t
 - React Testing Library
 
 ![App Demo](https://media.giphy.com/media/l4jGrm93597DIb9YDB/giphy.gif)
+![App Demo](https://github.com/monstaro/VRAD/blob/master/src/images/demo.mov)
 
 ### 3. Installation
 

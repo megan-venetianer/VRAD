@@ -1,6 +1,6 @@
 .listing {
   box-sizing: border-box;
-  border: 3px solid black;
+  border: 2px solid black;
   padding: 1em;
   margin: 1em;
   background: #F6F8AB;
@@ -23,6 +23,10 @@
   margin: auto;
   margin-top: .5em;
   justify-content: center;
+}
+
+.more-info:hover {
+  background: #1CCE89;
 }
 
 a {

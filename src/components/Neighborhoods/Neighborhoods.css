@@ -1,6 +1,6 @@
 .neighborhood-card {
   box-sizing: border-box;
-  border: 3px solid black;
+  border: 2px solid black;
   padding: 1em;
   margin: 1em;
   background: #F6F8AB;
@@ -16,9 +16,12 @@
   border: 2px solid black;
   width: 10em;
   padding: .4em;
-  /* margin: auto; */
   margin-top: .5em;
   justify-content: center;
+}
+
+.listing-btn:hover {
+  background: #1CCE89
 }
 
 .neighborhood-header {

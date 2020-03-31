@@ -4,7 +4,7 @@ import './ListingContainer.css';
 import PropTypes from 'prop-types';
 
 const ListingContainer = ({ listings, username, tripType, selectedNeighborhood }) => {
-  if (listings) {
+  if (listings && username) {
     return(
       <div data-testid="listing-container">
       <section className='listing-header' >
@@ -28,7 +28,7 @@ const ListingContainer = ({ listings, username, tripType, selectedNeighborhood }
     )
   } else {
     return (<div data-testid="listing-container">
-      Loading...
+      Please Log In
       </div>)
   }
 }

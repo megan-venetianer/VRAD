@@ -6,7 +6,7 @@ import '@testing-library/jest-dom';
 
 describe('ListingContainer', () => {
   it('renders listings', async () => {
-    const { getByTestId } = render(
+    const { getByTestId, getByText } = render(
       <Router>
       <ListingContainer
         listings = {[]}

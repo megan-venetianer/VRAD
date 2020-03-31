@@ -14,7 +14,9 @@ describe('Listings', () => {
         /></Router>);
 
     const nameEl = getByText("mockname");
+    const button = getByText("View More Info");
     expect(nameEl).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
   });
 });
 

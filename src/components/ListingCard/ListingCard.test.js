@@ -33,9 +33,9 @@ describe('ListingCard', () => {
     const { getByText, getAllByTestId } = mockRender;
     const nameEl = getByText("mockName");
     const addressEl = getByText("mockAddress");
-    const bathroomEl = getByText("Bathrooms: 3");
-    const bedroomEl = getByText("Bedrooms: 5");
-    const costEl = getByText("Price per night: $465");
+    const bathroomEl = getByText("3 baths");
+    const bedroomEl = getByText("5 beds");
+    const costEl = getByText("$465/night");
     const featuresEl = getAllByTestId("listing-feature")
     expect(nameEl).toBeInTheDocument();
     expect(addressEl).toBeInTheDocument();
